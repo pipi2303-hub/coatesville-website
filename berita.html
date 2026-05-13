@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita & Event – Coatesville Kota Wisata</title>
+  <meta name="description" content="Ikuti perkembangan terbaru kawasan Coatesville — berita, pengumuman pengelola, kegiatan warga, dan event komunitas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .news-sidebar {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 90px;
+    }
+    .news-sidebar h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+    .category-list { margin-bottom: 28px; }
+    .category-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--tr);
+    }
+    .category-list li:last-child { border-bottom: none; }
+    .category-list li span { font-size: 0.9rem; color: var(--text-muted); transition: var(--tr); }
+    .category-list li:hover span, .category-list li.active span { color: var(--primary-mid); font-weight: 600; }
+    .category-list li .count {
+      background: var(--accent-pale);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+    .recent-post {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--tr);
+    }
+    .recent-post:last-child { border-bottom: none; }
+    .recent-post:hover h5 { color: var(--primary-mid); }
+    .recent-post-img {
+      width: 60px; height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .recent-post h5 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.4;
+      transition: var(--tr);
+    }
+    .recent-post small { font-size: 0.75rem; color: var(--text-muted); }
+
+    .news-main-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .news-main-grid { grid-template-columns: 1fr; }
+      .news-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">Coatesville</span>
+        <small class="logo-sub">Kota Wisata</small>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="fasilitas.html">Fasilitas</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="berita.html" class="active">Berita & Event</a></li>
+      </ul>
+      <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
+      <button class="hamburger" id="hamburger" aria-label="Buka Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile-overlay" id="mobileOverlay"></div>
+<nav class="nav-mobile" id="navMobile">
+  <ul class="nav-mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tentang.html">Tentang Coatesville</a></li>
+    <li><a href="fasilitas.html">Fasilitas</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+    <li><a href="berita.html" class="active">Berita & Event</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+  </ul>
+  <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">Berita & Event</span>
+    </div>
+    <h1>Berita & Event</h1>
+    <p>Tetap terhubung dengan informasi terkini seputar kawasan, kegiatan warga, dan pengumuman penting dari pengelola.</p>
+  </div>
+</section>
+
+<!-- ===== FEATURED NEWS ===== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Berita Utama</div>
+      <h2>Sorotan Terbaru</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="news-featured fade-up">
+      <img src="https://picsum.photos/seed/cv-news-featured/800/500" alt="Fun Walk Coatesville 2026" class="news-featured-img">
+      <div class="news-featured-body">
+        <div class="section-tag light">Event</div>
+        <div class="news-date" style="margin-top:12px;">10 Mei 2026 &bull; oleh Pengelola Coatesville</div>
+        <h2>Fun Walk Warga Coatesville 2026: Ratusan Warga Antusias Ikut Serta</h2>
+        <p>Kegiatan fun walk tahunan yang diikuti oleh lebih dari 300 warga berlangsung meriah di seluruh kawasan Coatesville. Acara yang dimulai pukul 06.00 WIB ini menjadi ajang silaturahmi dan olahraga bersama untuk mempererat hubungan antar penghuni.</p>
+        <a href="#" class="btn btn-primary">Baca Selengkapnya →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ALL NEWS + SIDEBAR ===== -->
+<section class="section section-white">
+  <div class="container">
+    <div class="news-main-grid">
+
+      <!-- Articles -->
+      <div>
+        <div class="section-header" style="text-align:left; margin-bottom:36px;">
+          <div class="section-tag">Semua Berita</div>
+          <h2>Berita & Pengumuman</h2>
+          <div class="divider divider-left"></div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:28px;">
+          <div class="card fade-up">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/cv-news-1/600/400" alt="Renovasi Club House">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Pengumuman</span>
+                <span>2 Mei 2026</span>
+              </div>
+              <h3>Renovasi Club House Selesai & Siap Digunakan Kembali</h3>
+              <p>Setelah dua bulan proses renovasi, Club House Coatesville kini hadir dengan tampilan baru dan fasilitas yang lebih modern dan representatif.</p>
+              <a href="#" class="card-link">Baca Selengkapnya →</a>
+            </div>
+          </div>
+
+          <div class="card fade-up">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/cv-news-2/600/400" alt="Sistem Keamanan Baru">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Berita</span>
+                <span>25 Apr 2026</span>
+              </div>
+              <h3>Sistem Keamanan Berbasis RFID Diterapkan di Seluruh Kawasan</h3>
+              <p>Pengelola resmi memperkenalkan sistem akses gerbang berbasis kartu RFID dan CCTV generasi terbaru untuk meningkatkan keamanan.</p>
+              <a href="#" class="card-link">Baca Selengkapnya →</a>
+            </div>
+          </div>
+
+          <div class="card fade-up">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/cv-news-3/600/400" alt="Taman Bermain Baru">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Berita</span>
+                <span>15 Apr 2026</span>
+              </div>
+              <h3>Taman Bermain Baru di Blok C Resmi Dibuka</h3>
+              <p>Area bermain anak terbaru dengan peralatan berstandar internasional dan permukaan anti-benturan kini telah resmi dibuka untuk penghuni.</p>
+              <a href="#" class="card-link">Baca Selengkapnya →</a>
+            </div>
+          </div>
+
+          <div class="card fade-up">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/cv-news-4/600/400" alt="Pengumuman IPL">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Pengumuman</span>
+                <span>1 Apr 2026</span>
+              </div>
+              <h3>Jadwal & Besaran Iuran IPL Tahun 2026</h3>
+              <p>Pengelola mengumumkan jadwal pembayaran dan besaran Iuran Pemeliharaan Lingkungan (IPL) untuk tahun 2026 beserta mekanisme pembayarannya.</p>
+              <a href="#" class="card-link">Baca Selengkapnya →</a>
+            </div>
+          </div>
+
+          <div class="card fade-up">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/cv-news-5/600/400" alt="Bazar Warga">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Event</span>
+                <span>20 Mar 2026</span>
+              </div>
+              <h3>Bazar Ramadan Warga Coatesville 2026 Sukses Digelar</h3>
+              <p>Bazar Ramadan yang menampilkan 50+ stan UMKM warga berlangsung sukses dan meriah selama satu minggu penuh di area Club House.</p>
+              <a href="#" class="card-link">Baca Selengkapnya →</a>
+            </div>
+          </div>
+
+          <div class="card fade-up">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/cv-news-6/600/400" alt="HUT Coatesville">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag">Event</span>
+                <span>5 Mar 2026</span>
+              </div>
+              <h3>Perayaan HUT Coatesville ke-16: Meriah dan Penuh Kebersamaan</h3>
+              <p>Ulang tahun ke-16 Coatesville dirayakan bersama dengan berbagai hiburan, perlombaan, dan penghargaan warga berprestasi kawasan.</p>
+              <a href="#" class="card-link">Baca Selengkapnya →</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:20px;">
+          <a href="#" class="btn btn-outline-green">Muat Berita Lainnya</a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="news-sidebar fade-up">
+        <h4>Kategori</h4>
+        <ul class="category-list">
+          <li class="active"><span>Semua</span><span class="count">18</span></li>
+          <li><span>Berita</span><span class="count">7</span></li>
+          <li><span>Event</span><span class="count">6</span></li>
+          <li><span>Pengumuman</span><span class="count">5</span></li>
+        </ul>
+
+        <h4>Berita Terpopuler</h4>
+        <div class="recent-post">
+          <img src="https://picsum.photos/seed/cv-side-1/100/100" alt="Berita" class="recent-post-img">
+          <div>
+            <h5>Fun Walk Warga Coatesville 2026</h5>
+            <small>10 Mei 2026</small>
+          </div>
+        </div>
+        <div class="recent-post">
+          <img src="https://picsum.photos/seed/cv-side-2/100/100" alt="Berita" class="recent-post-img">
+          <div>
+            <h5>Renovasi Club House Selesai</h5>
+            <small>2 Mei 2026</small>
+          </div>
+        </div>
+        <div class="recent-post">
+          <img src="https://picsum.photos/seed/cv-side-3/100/100" alt="Berita" class="recent-post-img">
+          <div>
+            <h5>Sistem Keamanan RFID Baru</h5>
+            <small>25 Apr 2026</small>
+          </div>
+        </div>
+        <div class="recent-post">
+          <img src="https://picsum.photos/seed/cv-side-4/100/100" alt="Berita" class="recent-post-img">
+          <div>
+            <h5>Bazar Ramadan 2026 Sukses</h5>
+            <small>20 Mar 2026</small>
+          </div>
+        </div>
+
+        <div style="margin-top:28px; padding:24px; background:var(--primary); border-radius:var(--radius); text-align:center;">
+          <p style="color:rgba(255,255,255,0.8); font-size:0.87rem; margin-bottom:16px;">Dapatkan notifikasi berita & event terbaru</p>
+          <a href="kontak.html" class="btn btn-primary" style="width:100%; justify-content:center; font-size:0.85rem; padding:11px 16px;">Hubungi Kami</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-tag light fade-up">Jangan Ketinggalan</div>
+    <h2 class="fade-up">Ikuti Terus Kegiatan Komunitas Coatesville</h2>
+    <p class="fade-up">Jadilah bagian dari komunitas aktif kami dan nikmati berbagai event seru sepanjang tahun.</p>
+    <div class="cta-btns fade-up">
+      <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+      <a href="galeri.html" class="btn btn-outline">Lihat Galeri Event</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>
+          <div class="footer-logo-main">Coatesville</div>
+          <div class="footer-logo-sub">Kota Wisata</div>
+        </div>
+        <p>Kawasan hunian eksklusif dengan lingkungan asri, fasilitas lengkap, dan komunitas harmonis di Kota Wisata, Cibubur.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">FB</a>
+          <a href="#" class="social-link" title="Instagram">IG</a>
+          <a href="#" class="social-link" title="YouTube">YT</a>
+          <a href="#" class="social-link" title="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tentang.html">Tentang Coatesville</a></li>
+          <li><a href="fasilitas.html">Fasilitas</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="berita.html">Berita & Event</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fasilitas</h4>
+        <ul>
+          <li><a href="fasilitas.html">Club House</a></li>
+          <li><a href="fasilitas.html">Taman Bermain</a></li>
+          <li><a href="fasilitas.html">Area Hijau</a></li>
+          <li><a href="fasilitas.html">Keamanan 24 Jam</a></li>
+          <li><a href="fasilitas.html">Tempat Ibadah</a></li>
+          <li><a href="fasilitas.html">Area Olahraga</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="#">Jl. Coatesville No. 1</a></li>
+          <li><a href="#">Kota Wisata, Cibubur</a></li>
+          <li><a href="#">Bekasi 17435</a></li>
+          <li><a href="tel:02112345678">(021) 1234-5678</a></li>
+          <li><a href="mailto:info@coatesville.id">info@coatesville.id</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Coatesville – Kota Wisata. Hak cipta dilindungi.</span>
+      <span>Dibuat dengan ♥ untuk komunitas Coatesville</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Coatesville – Kota Wisata</title>
+  <meta name="description" content="Kenali lebih dalam kawasan hunian Coatesville di Kota Wisata — profil kawasan, lokasi strategis, dan konsep hunian premium kami.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--primary-mid));
+    }
+    .timeline-item { position: relative; margin-bottom: 36px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -28px; top: 6px;
+      width: 12px; height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-item .year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .timeline-item h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .timeline-item p { font-size: 0.87rem; margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">Coatesville</span>
+        <small class="logo-sub">Kota Wisata</small>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tentang.html" class="active">Tentang</a></li>
+        <li><a href="fasilitas.html">Fasilitas</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="berita.html">Berita & Event</a></li>
+      </ul>
+      <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
+      <button class="hamburger" id="hamburger" aria-label="Buka Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile-overlay" id="mobileOverlay"></div>
+<nav class="nav-mobile" id="navMobile">
+  <ul class="nav-mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tentang.html" class="active">Tentang Coatesville</a></li>
+    <li><a href="fasilitas.html">Fasilitas</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+    <li><a href="berita.html">Berita & Event</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+  </ul>
+  <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">Tentang Coatesville</span>
+    </div>
+    <h1>Tentang Coatesville</h1>
+    <p>Hunian premium yang memadukan keindahan alam, fasilitas berstandar tinggi, dan komunitas yang harmonis.</p>
+  </div>
+</section>
+
+<!-- ===== PROFIL KAWASAN ===== -->
+<section class="section section-white">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <div class="section-tag">Profil Kawasan</div>
+        <h2>Coatesville, Rumah untuk Setiap Keluarga</h2>
+        <div class="divider divider-left"></div>
+        <p style="margin-top:20px;">Coatesville adalah kawasan perumahan premium yang berlokasi strategis di Kota Wisata, Cibubur. Sejak berdiri pada tahun 2010, Coatesville telah menjadi hunian pilihan ratusan keluarga yang mendambakan kehidupan nyaman, aman, dan berkualitas.</p>
+        <p style="margin-top:14px;">Dengan luas kawasan lebih dari 45 hektar, Coatesville menawarkan beragam pilihan unit hunian yang dirancang dengan konsep modern minimalis dan memperhatikan setiap detail kenyamanan penghuni.</p>
+
+        <div class="about-features" style="margin-top:32px;">
+          <div class="about-feature">
+            <div class="about-feature-icon">🏡</div>
+            <div>
+              <h4>Hunian Modern Minimalis</h4>
+              <p>Desain arsitektur kontemporer yang elegan dengan material berkualitas tinggi.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🌿</div>
+            <div>
+              <h4>30% Area Hijau</h4>
+              <p>Sepertiga kawasan dialokasikan sebagai ruang terbuka hijau dan taman untuk kesejahteraan warga.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🤝</div>
+            <div>
+              <h4>Pengelolaan Profesional</h4>
+              <p>Tim pengelola berpengalaman yang berdedikasi untuk kenyamanan dan kepuasan penghuni.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img-decorated fade-up">
+        <img src="https://picsum.photos/seed/coatesville-tentang1/800/600" alt="Kawasan Coatesville">
+        <div class="img-badge">
+          <div class="badge-icon">🏆</div>
+          <div class="badge-text">
+            <span class="num">Best</span>
+            <small>Residential Area 2024</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NILAI & VISI ===== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Nilai Kami</div>
+      <h2>Mengapa Memilih Coatesville?</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3">
+      <div class="value-card fade-up">
+        <div class="value-icon">🌿</div>
+        <h3>Asri & Hijau</h3>
+        <p>Kawasan yang dikelilingi tanaman hijau, taman terawat, dan udara segar menciptakan lingkungan hidup yang ideal untuk seluruh anggota keluarga.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">🛡️</div>
+        <h3>Keamanan Terjamin</h3>
+        <p>Sistem keamanan berlapis 24 jam, petugas keamanan terlatih, CCTV di titik strategis, dan akses gerbang terkontrol memberikan ketenangan pikiran.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">👨‍👩‍👧‍👦</div>
+        <h3>Komunitas Harmonis</h3>
+        <p>Warga yang aktif dan bersahabat dengan berbagai program sosial dan kegiatan komunitas yang mempererat hubungan antar penghuni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONSEP HUNIAN ===== -->
+<section class="section section-white">
+  <div class="container">
+    <div class="about-grid">
+      <div class="img-decorated fade-up">
+        <img src="https://picsum.photos/seed/coatesville-konsep/800/600" alt="Konsep Hunian Coatesville">
+      </div>
+      <div class="fade-up">
+        <div class="section-tag">Konsep Hunian</div>
+        <h2>Modern Minimalis, Elegan & Timeless</h2>
+        <div class="divider divider-left"></div>
+        <p style="margin-top:20px;">Setiap unit di Coatesville dirancang dengan filosofi desain modern minimalis yang mengutamakan fungsi, estetika, dan kenyamanan. Penggunaan material berkualitas tinggi dan tata ruang yang cerdas memaksimalkan setiap sudut rumah.</p>
+
+        <div style="margin-top:28px;">
+          <div class="location-item">
+            <div class="location-dot"></div>
+            <div>
+              <h4>Tata Letak Optimal</h4>
+              <p>Setiap tipe unit memiliki tata ruang yang efisien dan pencahayaan alami maksimal.</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-dot"></div>
+            <div>
+              <h4>Material Premium</h4>
+              <p>Menggunakan material konstruksi dan finishing berkualitas tinggi yang tahan lama.</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-dot"></div>
+            <div>
+              <h4>Ramah Lingkungan</h4>
+              <p>Desain hemat energi dengan sistem drainase dan pengelolaan air yang berkelanjutan.</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-dot"></div>
+            <div>
+              <h4>Privasi Terjaga</h4>
+              <p>Tata letak kavling yang memperhatikan privasi dan kenyamanan setiap penghuni.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOKASI ===== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Lokasi Strategis</div>
+      <h2>Terhubung ke Mana Saja dengan Mudah</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="location-grid fade-up">
+      <div>
+        <h3 style="margin-bottom:24px;">Akses & Kedekatan Lokasi</h3>
+        <div class="location-item">
+          <div class="location-dot"></div>
+          <div>
+            <h4>Tol Cikampek / Jagorawi</h4>
+            <p>Akses tol hanya 5 menit dari gerbang kawasan, menghubungkan ke Jakarta dan sekitarnya.</p>
+          </div>
+        </div>
+        <div class="location-item">
+          <div class="location-dot"></div>
+          <div>
+            <h4>Pusat Perbelanjaan</h4>
+            <p>Giant, Kota Wisata Commercial Area, dan berbagai pusat belanja dalam radius 2 km.</p>
+          </div>
+        </div>
+        <div class="location-item">
+          <div class="location-dot"></div>
+          <div>
+            <h4>Sekolah & Universitas</h4>
+            <p>Sekolah internasional dan nasional terbaik tersedia di dalam dan sekitar kawasan.</p>
+          </div>
+        </div>
+        <div class="location-item">
+          <div class="location-dot"></div>
+          <div>
+            <h4>Fasilitas Kesehatan</h4>
+            <p>Rumah sakit dan klinik berkualitas tersedia dalam jarak yang terjangkau.</p>
+          </div>
+        </div>
+        <div class="location-item">
+          <div class="location-dot"></div>
+          <div>
+            <h4>Jakarta Pusat</h4>
+            <p>Berjarak ±35 km dari pusat kota Jakarta melalui jalan tol.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5!2d106.9950!3d-6.3720!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69917ef8c3ef79%3A0xf1a1e43a0f8e2dfa!2sKota%20Wisata%2C%20Cileungsi!5e0!3m2!1sid!2sid!4v1715000000000!5m2!1sid!2sid"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Peta Lokasi Coatesville Kota Wisata">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEJARAH / TIMELINE ===== -->
+<section class="section section-white">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <div class="section-tag">Perjalanan Kami</div>
+        <h2>Tumbuh Bersama Komunitas</h2>
+        <div class="divider divider-left"></div>
+        <p style="margin-top:20px;">Lebih dari satu dekade, Coatesville terus berkembang dan berinovasi untuk memberikan yang terbaik bagi penghuni.</p>
+        <div class="timeline" style="margin-top:36px;">
+          <div class="timeline-item">
+            <span class="year">2010</span>
+            <h4>Pembangunan Kawasan Dimulai</h4>
+            <p>Groundbreaking Coatesville dengan visi menciptakan hunian premium di Kota Wisata.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2012</span>
+            <h4>Unit Pertama Diserahterimakan</h4>
+            <p>100 unit pertama diserahterimakan kepada pemilik yang telah menanti.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2015</span>
+            <h4>Club House & Fasilitas Utama Diresmikan</h4>
+            <p>Peresmian Club House dan berbagai fasilitas unggulan kawasan.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2019</span>
+            <h4>Penghargaan Best Residential Area</h4>
+            <p>Menerima penghargaan sebagai kawasan perumahan terbaik di Jabodetabek.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2024</span>
+            <h4>Perayaan HUT ke-14 & Peremajaan Fasilitas</h4>
+            <p>Merayakan 14 tahun bersama lebih dari 500 keluarga dengan renovasi menyeluruh fasilitas kawasan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="img-decorated fade-up">
+        <img src="https://picsum.photos/seed/coatesville-timeline/800/700" alt="Sejarah Coatesville">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-tag light fade-up">Ingin Tahu Lebih Lanjut?</div>
+    <h2 class="fade-up">Jadilah Bagian dari Keluarga Besar Coatesville</h2>
+    <p class="fade-up">Hubungi tim kami untuk informasi lengkap mengenai unit hunian yang tersedia.</p>
+    <div class="cta-btns fade-up">
+      <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+      <a href="fasilitas.html" class="btn btn-outline">Lihat Fasilitas</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>
+          <div class="footer-logo-main">Coatesville</div>
+          <div class="footer-logo-sub">Kota Wisata</div>
+        </div>
+        <p>Kawasan hunian eksklusif dengan lingkungan asri, fasilitas lengkap, dan komunitas harmonis di Kota Wisata, Cibubur.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">FB</a>
+          <a href="#" class="social-link" title="Instagram">IG</a>
+          <a href="#" class="social-link" title="YouTube">YT</a>
+          <a href="#" class="social-link" title="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tentang.html">Tentang Coatesville</a></li>
+          <li><a href="fasilitas.html">Fasilitas</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="berita.html">Berita & Event</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fasilitas</h4>
+        <ul>
+          <li><a href="fasilitas.html">Club House</a></li>
+          <li><a href="fasilitas.html">Taman Bermain</a></li>
+          <li><a href="fasilitas.html">Area Hijau</a></li>
+          <li><a href="fasilitas.html">Keamanan 24 Jam</a></li>
+          <li><a href="fasilitas.html">Tempat Ibadah</a></li>
+          <li><a href="fasilitas.html">Area Olahraga</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="#">Jl. Coatesville No. 1</a></li>
+          <li><a href="#">Kota Wisata, Cibubur</a></li>
+          <li><a href="#">Bekasi 17435</a></li>
+          <li><a href="tel:02112345678">(021) 1234-5678</a></li>
+          <li><a href="mailto:info@coatesville.id">info@coatesville.id</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Coatesville – Kota Wisata. Hak cipta dilindungi.</span>
+      <span>Dibuat dengan ♥ untuk komunitas Coatesville</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

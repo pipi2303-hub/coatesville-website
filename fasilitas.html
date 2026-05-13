@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fasilitas – Coatesville Kota Wisata</title>
+  <meta name="description" content="Temukan berbagai fasilitas lengkap dan premium di kawasan Coatesville — Club House, taman bermain, area olahraga, keamanan 24 jam, dan lebih banyak lagi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .facility-detail-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      transition: var(--tr);
+      margin-bottom: 28px;
+    }
+    .facility-detail-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .facility-detail-card.reverse { direction: rtl; }
+    .facility-detail-card.reverse > * { direction: ltr; }
+    .facility-detail-img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
+    .facility-detail-body { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .facility-detail-body .facility-icon { margin: 0 0 18px; }
+    .facility-detail-body h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--text); }
+    .facility-detail-body p { margin-bottom: 16px; }
+    .facility-detail-body ul { list-style: none; }
+    .facility-detail-body ul li {
+      padding: 6px 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .facility-detail-body ul li:last-child { border-bottom: none; }
+    .facility-detail-body ul li::before {
+      content: '✓';
+      color: var(--primary-mid);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .amenity-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .amenity-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow);
+      transition: var(--tr);
+    }
+    .amenity-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .amenity-icon {
+      width: 44px; height: 44px;
+      background: var(--accent-pale);
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .amenity-item span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    @media (max-width: 768px) {
+      .facility-detail-card { grid-template-columns: 1fr; }
+      .facility-detail-card.reverse { direction: ltr; }
+      .facility-detail-img { height: 220px; }
+      .amenity-list { grid-template-columns: 1fr 1fr; }
+      .facility-detail-body { padding: 24px; }
+    }
+    @media (max-width: 480px) {
+      .amenity-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">Coatesville</span>
+        <small class="logo-sub">Kota Wisata</small>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="fasilitas.html" class="active">Fasilitas</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="berita.html">Berita & Event</a></li>
+      </ul>
+      <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
+      <button class="hamburger" id="hamburger" aria-label="Buka Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile-overlay" id="mobileOverlay"></div>
+<nav class="nav-mobile" id="navMobile">
+  <ul class="nav-mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tentang.html">Tentang Coatesville</a></li>
+    <li><a href="fasilitas.html" class="active">Fasilitas</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+    <li><a href="berita.html">Berita & Event</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+  </ul>
+  <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">Fasilitas</span>
+    </div>
+    <h1>Fasilitas Lengkap</h1>
+    <p>Berbagai fasilitas premium dirancang untuk mendukung kualitas hidup terbaik setiap penghuni Coatesville.</p>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW CARDS ===== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Fasilitas Utama</div>
+      <h2>6 Fasilitas Unggulan Coatesville</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3">
+      <div class="facility-card fade-up">
+        <div class="facility-icon">🏛️</div>
+        <h3>Club House</h3>
+        <p>Pusat kegiatan sosial dan rekreasi warga yang representatif dan modern.</p>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-icon">🎠</div>
+        <h3>Taman Bermain</h3>
+        <p>Area bermain anak yang aman dan lengkap untuk tumbuh kembang si kecil.</p>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-icon">🌳</div>
+        <h3>Area Hijau</h3>
+        <p>Taman dan ruang terbuka hijau yang asri untuk relaksasi warga.</p>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-icon">🔐</div>
+        <h3>Keamanan 24 Jam</h3>
+        <p>Sistem keamanan berlapis dengan petugas dan teknologi terkini.</p>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-icon">⛪</div>
+        <h3>Tempat Ibadah</h3>
+        <p>Fasilitas ibadah yang representatif untuk memenuhi kebutuhan spiritual.</p>
+      </div>
+      <div class="facility-card fade-up">
+        <div class="facility-icon">🏃</div>
+        <h3>Area Olahraga</h3>
+        <p>Lapangan dan fasilitas olahraga lengkap untuk gaya hidup aktif.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DETAIL FASILITAS ===== -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Detail Fasilitas</div>
+      <h2>Lebih Dekat dengan Fasilitas Kami</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Club House -->
+    <div class="facility-detail-card fade-up">
+      <img src="https://picsum.photos/seed/coatesville-clubhouse/600/400" alt="Club House" class="facility-detail-img">
+      <div class="facility-detail-body">
+        <div class="facility-icon" style="width:60px;height:60px;font-size:1.6rem;">🏛️</div>
+        <h3>Club House</h3>
+        <p>Club House Coatesville adalah jantung sosial kawasan. Fasilitas representatif ini menjadi tempat berbagai kegiatan warga, dari pertemuan RT/RW hingga acara komunitas besar.</p>
+        <ul>
+          <li>Aula pertemuan kapasitas 200 orang</li>
+          <li>Ruang serbaguna untuk acara privat</li>
+          <li>Kafetaria dan area istirahat</li>
+          <li>Wi-Fi berkecepatan tinggi</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Taman Bermain -->
+    <div class="facility-detail-card reverse fade-up">
+      <img src="https://picsum.photos/seed/coatesville-playground/600/400" alt="Taman Bermain" class="facility-detail-img">
+      <div class="facility-detail-body">
+        <div class="facility-icon" style="width:60px;height:60px;font-size:1.6rem;">🎠</div>
+        <h3>Taman Bermain Anak</h3>
+        <p>Area bermain yang dirancang khusus dengan standar keamanan internasional, menggunakan material ramah anak dan lahan yang luas untuk eksplorasi bebas.</p>
+        <ul>
+          <li>Peralatan bermain berstandar internasional</li>
+          <li>Permukaan anti-benturan (rubber flooring)</li>
+          <li>Area bermain terpisah untuk usia 2–5 dan 6–12 tahun</li>
+          <li>Kursi dan gazebo untuk orang tua</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Area Hijau -->
+    <div class="facility-detail-card fade-up">
+      <img src="https://picsum.photos/seed/coatesville-garden/600/400" alt="Area Hijau" class="facility-detail-img">
+      <div class="facility-detail-body">
+        <div class="facility-icon" style="width:60px;height:60px;font-size:1.6rem;">🌳</div>
+        <h3>Area Hijau & Taman</h3>
+        <p>Lebih dari 30% kawasan dialokasikan sebagai ruang terbuka hijau. Taman-taman terawat dengan tanaman tropis menciptakan suasana asri dan menyejukkan.</p>
+        <ul>
+          <li>Taman utama 3 hektar di pusat kawasan</li>
+          <li>Jogging track sepanjang 2 km</li>
+          <li>Area piknik dan duduk santai</li>
+          <li>Kolam air mancur dekoratif</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Keamanan -->
+    <div class="facility-detail-card reverse fade-up">
+      <img src="https://picsum.photos/seed/coatesville-security/600/400" alt="Keamanan" class="facility-detail-img">
+      <div class="facility-detail-body">
+        <div class="facility-icon" style="width:60px;height:60px;font-size:1.6rem;">🔐</div>
+        <h3>Keamanan 24 Jam</h3>
+        <p>Sistem keamanan berlapis memastikan setiap penghuni merasa aman dan nyaman sepanjang waktu. Teknologi terkini dikombinasikan dengan petugas keamanan terlatih.</p>
+        <ul>
+          <li>Petugas keamanan 3 shift x 24 jam</li>
+          <li>CCTV 120+ titik di seluruh kawasan</li>
+          <li>Akses gerbang dengan kartu RFID</li>
+          <li>Sistem panic button di tiap blok</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tempat Ibadah -->
+    <div class="facility-detail-card fade-up">
+      <img src="https://picsum.photos/seed/coatesville-mosque/600/400" alt="Tempat Ibadah" class="facility-detail-img">
+      <div class="facility-detail-body">
+        <div class="facility-icon" style="width:60px;height:60px;font-size:1.6rem;">⛪</div>
+        <h3>Tempat Ibadah</h3>
+        <p>Fasilitas ibadah yang representatif dan nyaman tersedia di dalam kawasan untuk memenuhi kebutuhan spiritual seluruh penghuni dari berbagai latar belakang.</p>
+        <ul>
+          <li>Masjid kapasitas 500 jamaah</li>
+          <li>Musholla di setiap cluster</li>
+          <li>Area wudhu yang bersih dan nyaman</li>
+          <li>Taman sekitar tempat ibadah yang asri</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Area Olahraga -->
+    <div class="facility-detail-card reverse fade-up">
+      <img src="https://picsum.photos/seed/coatesville-sports/600/400" alt="Area Olahraga" class="facility-detail-img">
+      <div class="facility-detail-body">
+        <div class="facility-icon" style="width:60px;height:60px;font-size:1.6rem;">🏃</div>
+        <h3>Area Olahraga</h3>
+        <p>Berbagai fasilitas olahraga tersedia untuk mendukung gaya hidup aktif dan sehat seluruh anggota keluarga dari segala usia.</p>
+        <ul>
+          <li>Kolam renang 25 meter + kolam anak</li>
+          <li>Lapangan futsal berstandar FIFA</li>
+          <li>Lapangan badminton (indoor)</li>
+          <li>Lapangan tenis & basket</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADDITIONAL AMENITIES ===== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Fasilitas Pendukung</div>
+      <h2>Fasilitas Pelengkap Kawasan</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="amenity-list fade-up">
+      <div class="amenity-item"><div class="amenity-icon">🏪</div><span>Mini Market 24 Jam</span></div>
+      <div class="amenity-item"><div class="amenity-icon">🏥</div><span>Klinik Kesehatan</span></div>
+      <div class="amenity-item"><div class="amenity-icon">📚</div><span>Perpustakaan Mini</span></div>
+      <div class="amenity-item"><div class="amenity-icon">🚗</div><span>Area Parkir Luas</span></div>
+      <div class="amenity-item"><div class="amenity-icon">🌊</div><span>Drainase Terpadu</span></div>
+      <div class="amenity-item"><div class="amenity-icon">💡</div><span>Penerangan Jalan LED</span></div>
+      <div class="amenity-item"><div class="amenity-icon">🗑️</div><span>Pengelolaan Sampah</span></div>
+      <div class="amenity-item"><div class="amenity-icon">📶</div><span>Wi-Fi Area Publik</span></div>
+      <div class="amenity-item"><div class="amenity-icon">🚌</div><span>Shuttle Bus Kawasan</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-tag light fade-up">Nikmati Semua Fasilitas</div>
+    <h2 class="fade-up">Jadilah Penghuni Coatesville Hari Ini</h2>
+    <p class="fade-up">Akses semua fasilitas premium di atas hanya dengan menjadi bagian dari komunitas Coatesville.</p>
+    <div class="cta-btns fade-up">
+      <a href="kontak.html" class="btn btn-primary">Hubungi Kami Sekarang</a>
+      <a href="galeri.html" class="btn btn-outline">Lihat Galeri</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>
+          <div class="footer-logo-main">Coatesville</div>
+          <div class="footer-logo-sub">Kota Wisata</div>
+        </div>
+        <p>Kawasan hunian eksklusif dengan lingkungan asri, fasilitas lengkap, dan komunitas harmonis di Kota Wisata, Cibubur.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">FB</a>
+          <a href="#" class="social-link" title="Instagram">IG</a>
+          <a href="#" class="social-link" title="YouTube">YT</a>
+          <a href="#" class="social-link" title="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tentang.html">Tentang Coatesville</a></li>
+          <li><a href="fasilitas.html">Fasilitas</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="berita.html">Berita & Event</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fasilitas</h4>
+        <ul>
+          <li><a href="fasilitas.html">Club House</a></li>
+          <li><a href="fasilitas.html">Taman Bermain</a></li>
+          <li><a href="fasilitas.html">Area Hijau</a></li>
+          <li><a href="fasilitas.html">Keamanan 24 Jam</a></li>
+          <li><a href="fasilitas.html">Tempat Ibadah</a></li>
+          <li><a href="fasilitas.html">Area Olahraga</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="#">Jl. Coatesville No. 1</a></li>
+          <li><a href="#">Kota Wisata, Cibubur</a></li>
+          <li><a href="#">Bekasi 17435</a></li>
+          <li><a href="tel:02112345678">(021) 1234-5678</a></li>
+          <li><a href="mailto:info@coatesville.id">info@coatesville.id</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Coatesville – Kota Wisata. Hak cipta dilindungi.</span>
+      <span>Dibuat dengan ♥ untuk komunitas Coatesville</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
