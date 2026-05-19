@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coatesville – Hunian Premium di Kota Wisata</title>
-  <meta name="description" content="Kawasan hunian eksklusif dengan lingkungan asri, fasilitas lengkap, dan komunitas yang harmonis di jantung Kota Wisata, Cibubur.">
+  <title>Posyandu Sehat Ceria – RW 44 Coatesville Kota Wisata</title>
+  <meta name="description" content="Posyandu Sehat Ceria RW 44 Coatesville Kota Wisata melayani warga perumahan untuk hidup sehat, bahagia, aktif, produktif, dan mandiri.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .nav-logo { flex-direction: row !important; align-items: center !important; gap: 10px; }
+    .nav-logo-img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  </style>
 </head>
 <body>
 
@@ -17,17 +21,20 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="index.html" class="nav-logo">
-        <span class="logo-main">Coatesville</span>
-        <small class="logo-sub">Kota Wisata</small>
+        <img src="images/logo-posyandu.jpeg" alt="Logo Posyandu Sehat Ceria" class="nav-logo-img">
+        <div>
+          <span class="logo-main">Posyandu Sehat Ceria</span>
+          <small class="logo-sub">RW 44 – Coatesville Kota Wisata</small>
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="fasilitas.html">Fasilitas</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="fasilitas.html">Layanan</a></li>
         <li><a href="galeri.html">Galeri</a></li>
-        <li><a href="berita.html">Berita & Event</a></li>
+        <li><a href="berita.html">Informasi</a></li>
       </ul>
-      <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
+      <a href="kontak.html" class="nav-cta">Kontak Kami</a>
       <button class="hamburger" id="hamburger" aria-label="Buka Menu">
         <span></span><span></span><span></span>
       </button>
@@ -39,28 +46,28 @@
 <nav class="nav-mobile" id="navMobile">
   <ul class="nav-mobile-links">
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="tentang.html">Tentang Coatesville</a></li>
-    <li><a href="fasilitas.html">Fasilitas</a></li>
+    <li><a href="tentang.html">Tentang Kami</a></li>
+    <li><a href="fasilitas.html">Layanan</a></li>
     <li><a href="galeri.html">Galeri</a></li>
-    <li><a href="berita.html">Berita & Event</a></li>
+    <li><a href="berita.html">Informasi</a></li>
     <li><a href="kontak.html">Kontak</a></li>
   </ul>
-  <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+  <a href="kontak.html" class="btn btn-primary">Kontak Kami</a>
 </nav>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="https://picsum.photos/seed/coatesville-hero/1920/1080" alt="Kawasan Coatesville">
+    <img src="https://picsum.photos/seed/posyandu-hero/1920/1080" alt="Kegiatan Posyandu Sehat Ceria">
   </div>
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-tag">Hunian Premium &bull; Kota Wisata, Cibubur</div>
-      <h1>Temukan Rumah Impian<br>di <span class="gold">Coatesville</span></h1>
-      <p>Kawasan hunian eksklusif dengan lingkungan asri, fasilitas lengkap, dan komunitas yang harmonis di jantung Kota Wisata.</p>
+      <div class="hero-tag">Posyandu RW 44 &bull; Coatesville Kota Wisata</div>
+      <h1>Warga Sehat,<br>Komunitas <span class="gold">Bahagia & Mandiri</span></h1>
+      <p>Posyandu Sehat Ceria melayani seluruh siklus hidup warga — dari ibu hamil, bayi & balita, anak & remaja, usia produktif, hingga lansia.</p>
       <div class="hero-btns">
-        <a href="tentang.html" class="btn btn-primary">Jelajahi Kawasan</a>
+        <a href="fasilitas.html" class="btn btn-primary">Lihat Layanan Kami</a>
         <a href="kontak.html" class="btn btn-outline">Hubungi Kami</a>
       </div>
     </div>
@@ -78,20 +85,20 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item fade-up">
-        <span class="stat-number" data-target="500" data-suffix="+">0+</span>
-        <div class="stat-label">Unit Hunian</div>
+        <span class="stat-number" data-target="7" data-suffix="+">0+</span>
+        <div class="stat-label">Jenis Layanan Aktif</div>
       </div>
       <div class="stat-item fade-up">
-        <span class="stat-number" data-target="45" data-suffix=" Ha">0 Ha</span>
-        <div class="stat-label">Luas Kawasan</div>
+        <span class="stat-number" data-target="5" data-suffix=" Segmen">0 Segmen</span>
+        <div class="stat-label">Sasaran Pelayanan</div>
       </div>
       <div class="stat-item fade-up">
-        <span class="stat-number" data-target="15" data-suffix="+">0+</span>
-        <div class="stat-label">Fasilitas Lengkap</div>
+        <span class="stat-number" data-target="17" data-suffix=" Program">0 Program</span>
+        <div class="stat-label">Program Unggulan</div>
       </div>
       <div class="stat-item fade-up">
-        <span class="stat-number" data-target="14" data-suffix=" Thn">0 Thn</span>
-        <div class="stat-label">Berdiri & Berkembang</div>
+        <span class="stat-number">RW 44</span>
+        <div class="stat-label">Coatesville Kota Wisata</div>
       </div>
     </div>
   </div>
@@ -102,40 +109,40 @@
   <div class="container">
     <div class="about-grid">
       <div class="img-decorated fade-up">
-        <img src="https://picsum.photos/seed/coatesville-about/800/600" alt="Lingkungan Coatesville">
+        <img src="https://picsum.photos/seed/posyandu-about/800/600" alt="Kegiatan Posyandu Sehat Ceria">
         <div class="img-badge">
-          <div class="badge-icon">🏡</div>
+          <div class="badge-icon">❤️</div>
           <div class="badge-text">
-            <span class="num">500+</span>
-            <small>Keluarga Bahagia</small>
+            <span class="num">Sehat</span>
+            <small>Bahagia & Mandiri</small>
           </div>
         </div>
       </div>
       <div class="fade-up">
         <div class="section-tag">Tentang Kami</div>
-        <h2>Kawasan Hunian Eksklusif yang Asri & Nyaman</h2>
+        <h2>Posyandu Sehat Ceria, Hadir untuk Semua Tahapan Hidup Anda</h2>
         <div class="divider divider-left"></div>
-        <p style="margin-top:20px;">Coatesville adalah perumahan premium di kawasan Kota Wisata, Cibubur yang menawarkan kehidupan ideal bagi keluarga modern. Dengan konsep hunian yang memadukan keindahan alam dan fasilitas berstandar tinggi, Coatesville menjadi pilihan tepat untuk tempat tinggal impian Anda.</p>
+        <p style="margin-top:20px;">Posyandu Sehat Ceria adalah pos pelayanan terpadu yang berkomitmen mewujudkan masyarakat perumahan Coatesville yang sehat, bahagia, aktif, produktif, dan mandiri. Kami melayani warga RW 44 dari segala usia dengan pendekatan Integrasi Layanan Primer.</p>
         <div class="about-features">
           <div class="about-feature">
-            <div class="about-feature-icon">🌿</div>
+            <div class="about-feature-icon">🩺</div>
             <div>
-              <h4>Lingkungan Hijau & Asri</h4>
-              <p>Dikelilingi taman dan area hijau yang terawat untuk kenyamanan hidup sehari-hari.</p>
+              <h4>Pemeriksaan Dasar Rutin</h4>
+              <p>Skrining kesehatan berkala yang terjangkau dan mudah diakses oleh seluruh warga.</p>
             </div>
           </div>
           <div class="about-feature">
-            <div class="about-feature-icon">🛡️</div>
+            <div class="about-feature-icon">🏠</div>
             <div>
-              <h4>Keamanan 24 Jam</h4>
-              <p>Sistem keamanan terpadu dengan petugas berjaga sepanjang waktu untuk ketenangan Anda.</p>
+              <h4>Kunjungan Rumah</h4>
+              <p>Kader kesehatan terlatih siap mengunjungi warga yang membutuhkan perhatian khusus.</p>
             </div>
           </div>
           <div class="about-feature">
-            <div class="about-feature-icon">👥</div>
+            <div class="about-feature-icon">📚</div>
             <div>
-              <h4>Komunitas yang Harmonis</h4>
-              <p>Warga yang aktif dan solid dengan berbagai kegiatan komunitas yang memperkuat kebersamaan.</p>
+              <h4>Edukasi Kesehatan</h4>
+              <p>Program konsultasi dan edukasi kesehatan untuk meningkatkan kesadaran hidup sehat.</p>
             </div>
           </div>
         </div>
@@ -145,136 +152,179 @@
   </div>
 </section>
 
-<!-- ===== FACILITIES ===== -->
+<!-- ===== LAYANAN ===== -->
 <section class="section section-cream">
   <div class="container">
     <div class="section-header fade-up">
-      <div class="section-tag">Fasilitas Kami</div>
-      <h2>Fasilitas Lengkap untuk Kehidupan Ideal</h2>
+      <div class="section-tag">Layanan Kami</div>
+      <h2>Tujuh Layanan Unggulan Posyandu</h2>
       <div class="divider"></div>
-      <p style="margin-top:16px;">Berbagai fasilitas premium tersedia untuk mendukung gaya hidup aktif dan nyaman seluruh penghuni.</p>
+      <p style="margin-top:16px;">Kami menyediakan berbagai layanan kesehatan komprehensif untuk mendukung kualitas hidup seluruh warga.</p>
     </div>
     <div class="grid-3">
       <div class="facility-card fade-up">
-        <div class="facility-icon">🏛️</div>
-        <h3>Club House</h3>
-        <p>Pusat kegiatan sosial warga dengan berbagai fasilitas rekreasi dan pertemuan komunitas.</p>
+        <div class="facility-icon">🩺</div>
+        <h3>Pemeriksaan Dasar</h3>
+        <p>Skrining kesehatan dasar rutin untuk mendeteksi dini kondisi kesehatan warga di semua usia.</p>
       </div>
       <div class="facility-card fade-up">
-        <div class="facility-icon">🎠</div>
-        <h3>Taman Bermain</h3>
-        <p>Area bermain anak yang aman, lengkap, dan menyenangkan untuk tumbuh kembang si kecil.</p>
+        <div class="facility-icon">🏠</div>
+        <h3>Kunjungan Rumah</h3>
+        <p>Kader kesehatan mengunjungi langsung warga yang memerlukan pemantauan kesehatan di rumah.</p>
       </div>
       <div class="facility-card fade-up">
-        <div class="facility-icon">🌳</div>
-        <h3>Area Hijau</h3>
-        <p>Taman dan ruang terbuka hijau yang asri untuk relaksasi dan aktivitas luar ruangan.</p>
+        <div class="facility-icon">🍱</div>
+        <h3>Pemberian PMT</h3>
+        <p>Pemberian Makanan Tambahan untuk mencegah dan mengatasi masalah gizi pada balita dan lansia.</p>
       </div>
       <div class="facility-card fade-up">
-        <div class="facility-icon">🔐</div>
-        <h3>Keamanan 24 Jam</h3>
-        <p>Sistem keamanan berlapis dengan petugas, CCTV, dan akses kontrol untuk ketenangan pikiran.</p>
+        <div class="facility-icon">💬</div>
+        <h3>Konsultasi & Edukasi</h3>
+        <p>Konsultasi dan edukasi kesehatan oleh kader dan tenaga kesehatan terlatih.</p>
       </div>
       <div class="facility-card fade-up">
-        <div class="facility-icon">⛪</div>
-        <h3>Tempat Ibadah</h3>
-        <p>Fasilitas ibadah yang representatif dan nyaman untuk memenuhi kebutuhan spiritual warga.</p>
+        <div class="facility-icon">🏥</div>
+        <h3>Akses Layanan Puskesmas</h3>
+        <p>Membantu warga mendapatkan akses layanan kesehatan lanjutan di puskesmas setempat.</p>
       </div>
       <div class="facility-card fade-up">
         <div class="facility-icon">🏃</div>
-        <h3>Area Olahraga</h3>
-        <p>Lapangan dan fasilitas olahraga lengkap untuk mendukung gaya hidup aktif dan sehat.</p>
+        <h3>Olahraga Bersama</h3>
+        <p>Program olahraga terstruktur untuk mendukung kebugaran dan gaya hidup aktif warga.</p>
       </div>
     </div>
     <div style="text-align:center; margin-top:44px;">
-      <a href="fasilitas.html" class="btn btn-outline-green">Lihat Semua Fasilitas →</a>
+      <a href="fasilitas.html" class="btn btn-outline-green">Lihat Semua Layanan →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOKUS SASARAN ===== -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Sasaran Pelayanan</div>
+      <h2>Melayani Seluruh Siklus Hidup Warga</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3">
+      <div class="value-card fade-up">
+        <div class="value-icon">🤰</div>
+        <h3>Ibu Hamil</h3>
+        <p>Pemantauan kehamilan, konsultasi gizi, persiapan persalinan, dan deteksi dini komplikasi kehamilan.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">👶</div>
+        <h3>Bayi & Balita</h3>
+        <p>Pemantauan tumbuh kembang, pemberian PMT, imunisasi, dan deteksi dini gangguan perkembangan.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">🧒</div>
+        <h3>Anak & Remaja</h3>
+        <p>Screening kesehatan, edukasi perilaku sehat, dan pemberian vitamin untuk pertumbuhan optimal.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">💪</div>
+        <h3>Usia Produktif & Dewasa</h3>
+        <p>Pemeriksaan kesehatan rutin, deteksi penyakit tidak menular, dan program hidup sehat aktif.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">👴</div>
+        <h3>Lansia</h3>
+        <p>Pemantauan kesehatan lansia, program olahraga ringan, dan akses layanan kesehatan yang mudah.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">👨‍👩‍👧‍👦</div>
+        <h3>Keluarga</h3>
+        <p>Edukasi kesehatan keluarga, konseling gizi, dan pemberdayaan kemandirian hidup sehat bersama.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== GALLERY TEASER ===== -->
-<section class="section section-white">
+<section class="section section-cream">
   <div class="container">
     <div class="section-header fade-up">
       <div class="section-tag">Galeri</div>
-      <h2>Keindahan Kawasan Coatesville</h2>
+      <h2>Momen Kegiatan Posyandu</h2>
       <div class="divider"></div>
     </div>
     <div class="gallery-teaser fade-up">
       <a href="galeri.html" class="item item-main">
-        <img src="https://picsum.photos/seed/coatesville-g1/800/900" alt="Kawasan Coatesville">
+        <img src="https://picsum.photos/seed/posyandu-g1/800/900" alt="Kegiatan Posyandu">
       </a>
       <a href="galeri.html" class="item">
-        <img src="https://picsum.photos/seed/coatesville-g2/600/400" alt="Taman Kawasan">
+        <img src="https://picsum.photos/seed/posyandu-g2/600/400" alt="Pelayanan Kesehatan">
       </a>
       <a href="galeri.html" class="item">
-        <img src="https://picsum.photos/seed/coatesville-g3/600/400" alt="Area Fasilitas">
+        <img src="https://picsum.photos/seed/posyandu-g3/600/400" alt="Olahraga Bersama">
       </a>
       <a href="galeri.html" class="item">
-        <img src="https://picsum.photos/seed/coatesville-g4/600/400" alt="Club House">
+        <img src="https://picsum.photos/seed/posyandu-g4/600/400" alt="Edukasi Warga">
       </a>
       <a href="galeri.html" class="item item-more">
-        <span>+48</span>
+        <span>+20</span>
         <p>Foto Lainnya</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ===== NEWS ===== -->
-<section class="section section-cream">
+<!-- ===== INFORMASI ===== -->
+<section class="section section-white">
   <div class="container">
     <div class="section-header fade-up">
-      <div class="section-tag">Berita & Event</div>
-      <h2>Aktivitas & Pengumuman Terkini</h2>
+      <div class="section-tag">Informasi & Publikasi</div>
+      <h2>Artikel & Informasi Kesehatan Terkini</h2>
       <div class="divider"></div>
     </div>
     <div class="grid-3">
       <div class="card fade-up">
         <div class="card-img-wrap">
-          <img src="https://picsum.photos/seed/coatesville-n1/600/400" alt="Event Warga">
+          <img src="https://picsum.photos/seed/posyandu-a1/600/400" alt="Kesehatan Lansia">
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="tag">Event</span>
+            <span class="tag">Lansia</span>
             <span>10 Mei 2026</span>
           </div>
-          <h3>Fun Walk Warga Coatesville 2026</h3>
-          <p>Ratusan warga antusias ikut serta dalam kegiatan fun walk tahunan yang mengelilingi kawasan perumahan.</p>
+          <h3>Menjaga Kesehatan Lansia di Usia Senja</h3>
+          <p>Tips menjaga kesehatan fisik dan mental lansia agar tetap aktif dan bahagia di lingkungan perumahan.</p>
           <a href="berita.html" class="card-link">Baca Selengkapnya →</a>
         </div>
       </div>
       <div class="card fade-up">
         <div class="card-img-wrap">
-          <img src="https://picsum.photos/seed/coatesville-n2/600/400" alt="Club House">
+          <img src="https://picsum.photos/seed/posyandu-a2/600/400" alt="Kesehatan Anak">
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="tag">Pengumuman</span>
-            <span>2 Mei 2026</span>
+            <span class="tag">Anak & Keluarga</span>
+            <span>3 Mei 2026</span>
           </div>
-          <h3>Renovasi Club House Selesai & Siap Digunakan</h3>
-          <p>Setelah dua bulan renovasi, Club House kini hadir dengan tampilan baru dan fasilitas yang lebih modern.</p>
+          <h3>Pentingnya Imunisasi Lengkap untuk Anak</h3>
+          <p>Jadwal imunisasi lengkap dan manfaatnya untuk melindungi anak dari penyakit berbahaya sejak dini.</p>
           <a href="berita.html" class="card-link">Baca Selengkapnya →</a>
         </div>
       </div>
       <div class="card fade-up">
         <div class="card-img-wrap">
-          <img src="https://picsum.photos/seed/coatesville-n3/600/400" alt="Keamanan">
+          <img src="https://picsum.photos/seed/posyandu-a3/600/400" alt="Gizi Keluarga">
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="tag">Berita</span>
+            <span class="tag">Gizi</span>
             <span>25 Apr 2026</span>
           </div>
-          <h3>Sistem Keamanan Baru Diterapkan di Seluruh Kawasan</h3>
-          <p>Pengelola memperkenalkan sistem akses pintu gerbang berbasis RFID dan CCTV generasi terbaru.</p>
+          <h3>Pola Makan Sehat untuk Seluruh Keluarga</h3>
+          <p>Panduan gizi seimbang yang mudah diterapkan dalam kehidupan sehari-hari untuk keluarga yang sehat dan produktif.</p>
           <a href="berita.html" class="card-link">Baca Selengkapnya →</a>
         </div>
       </div>
     </div>
     <div style="text-align:center; margin-top:44px;">
-      <a href="berita.html" class="btn btn-outline-green">Lihat Semua Berita →</a>
+      <a href="berita.html" class="btn btn-outline-green">Lihat Semua Informasi →</a>
     </div>
   </div>
 </section>
@@ -282,12 +332,12 @@
 <!-- ===== CTA ===== -->
 <section class="cta-section">
   <div class="container">
-    <div class="section-tag light fade-up">Tertarik Tinggal di Coatesville?</div>
-    <h2 class="fade-up">Wujudkan Rumah Impian Anda Bersama Kami</h2>
-    <p class="fade-up">Tim kami siap membantu Anda menemukan unit terbaik yang sesuai dengan kebutuhan dan anggaran Anda.</p>
+    <div class="section-tag light fade-up">Butuh Layanan Kesehatan?</div>
+    <h2 class="fade-up">Posyandu Sehat Ceria Siap Melayani Anda</h2>
+    <p class="fade-up">Hubungi kami untuk informasi jadwal posyandu, layanan kesehatan, dan program komunitas kami.</p>
     <div class="cta-btns fade-up">
       <a href="kontak.html" class="btn btn-primary">Hubungi Kami Sekarang</a>
-      <a href="fasilitas.html" class="btn btn-outline">Lihat Fasilitas</a>
+      <a href="fasilitas.html" class="btn btn-outline">Lihat Layanan</a>
     </div>
   </div>
 </section>
@@ -298,10 +348,10 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div>
-          <div class="footer-logo-main">Coatesville</div>
-          <div class="footer-logo-sub">Kota Wisata</div>
+          <div class="footer-logo-main">Posyandu Sehat Ceria</div>
+          <div class="footer-logo-sub">RW 44 – Coatesville Kota Wisata</div>
         </div>
-        <p>Kawasan hunian eksklusif dengan lingkungan asri, fasilitas lengkap, dan komunitas harmonis di Kota Wisata, Cibubur.</p>
+        <p>Mewujudkan warga perumahan yang sehat, bahagia, aktif, produktif, dan mandiri melalui pelayanan posyandu yang berkualitas.</p>
         <div class="social-links">
           <a href="#" class="social-link" title="Facebook">FB</a>
           <a href="#" class="social-link" title="Instagram">IG</a>
@@ -313,38 +363,38 @@
         <h4>Navigasi</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="tentang.html">Tentang Coatesville</a></li>
-          <li><a href="fasilitas.html">Fasilitas</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="fasilitas.html">Layanan</a></li>
           <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="berita.html">Berita & Event</a></li>
+          <li><a href="berita.html">Informasi</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Fasilitas</h4>
+        <h4>Layanan</h4>
         <ul>
-          <li><a href="fasilitas.html">Club House</a></li>
-          <li><a href="fasilitas.html">Taman Bermain</a></li>
-          <li><a href="fasilitas.html">Area Hijau</a></li>
-          <li><a href="fasilitas.html">Keamanan 24 Jam</a></li>
-          <li><a href="fasilitas.html">Tempat Ibadah</a></li>
-          <li><a href="fasilitas.html">Area Olahraga</a></li>
+          <li><a href="fasilitas.html">Pemeriksaan Dasar</a></li>
+          <li><a href="fasilitas.html">Kunjungan Rumah</a></li>
+          <li><a href="fasilitas.html">Pemberian PMT</a></li>
+          <li><a href="fasilitas.html">Edukasi Kesehatan</a></li>
+          <li><a href="fasilitas.html">Olahraga</a></li>
+          <li><a href="fasilitas.html">Akses Vaksinasi</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Kontak</h4>
         <ul>
-          <li><a href="#">Jl. Coatesville No. 1</a></li>
-          <li><a href="#">Kota Wisata, Cibubur</a></li>
-          <li><a href="#">Bekasi 17435</a></li>
-          <li><a href="tel:02112345678">(021) 1234-5678</a></li>
-          <li><a href="mailto:info@coatesville.id">info@coatesville.id</a></li>
+          <li><a href="#">Gedung Serba Guna</a></li>
+          <li><a href="#">Jalan Taman Phase 2 Coatesville</a></li>
+          <li><a href="#">Kel. Ciangsana, Kec. Gunung Putri</a></li>
+          <li><a href="#">Kab. Bogor 16968</a></li>
+          <li><a href="#">Hotline: Segera Tersedia</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Coatesville – Kota Wisata. Hak cipta dilindungi.</span>
-      <span>Dibuat dengan ♥ untuk komunitas Coatesville</span>
+      <span>&copy; 2026 Posyandu Sehat Ceria – RW 44 Coatesville Kota Wisata. Hak cipta dilindungi.</span>
+      <span>Melayani dengan sepenuh hati</span>
     </div>
   </div>
 </footer>

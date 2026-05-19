@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeri – Coatesville Kota Wisata</title>
-  <meta name="description" content="Galeri foto kawasan Coatesville — kawasan hunian, fasilitas, kegiatan warga, dan lingkungan sekitar.">
+  <title>Galeri Kegiatan – Posyandu Sehat Ceria RW 44 Coatesville</title>
+  <meta name="description" content="Galeri foto kegiatan Posyandu Sehat Ceria RW 44 Coatesville — dokumentasi pelayanan, olahraga bersama, sosialisasi, dan kegiatan komunitas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .nav-logo { flex-direction: row !important; align-items: center !important; gap: 10px; }
+    .nav-logo-img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  </style>
 </head>
 <body>
 
@@ -17,17 +21,20 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="index.html" class="nav-logo">
-        <span class="logo-main">Coatesville</span>
-        <small class="logo-sub">Kota Wisata</small>
+        <img src="images/logo-posyandu.jpeg" alt="Logo Posyandu Sehat Ceria" class="nav-logo-img">
+        <div>
+          <span class="logo-main">Posyandu Sehat Ceria</span>
+          <small class="logo-sub">RW 44 – Coatesville Kota Wisata</small>
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="fasilitas.html">Fasilitas</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="fasilitas.html">Layanan</a></li>
         <li><a href="galeri.html" class="active">Galeri</a></li>
-        <li><a href="berita.html">Berita & Event</a></li>
+        <li><a href="berita.html">Informasi</a></li>
       </ul>
-      <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
+      <a href="kontak.html" class="nav-cta">Kontak Kami</a>
       <button class="hamburger" id="hamburger" aria-label="Buka Menu">
         <span></span><span></span><span></span>
       </button>
@@ -39,13 +46,13 @@
 <nav class="nav-mobile" id="navMobile">
   <ul class="nav-mobile-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="tentang.html">Tentang Coatesville</a></li>
-    <li><a href="fasilitas.html">Fasilitas</a></li>
+    <li><a href="tentang.html">Tentang Kami</a></li>
+    <li><a href="fasilitas.html">Layanan</a></li>
     <li><a href="galeri.html" class="active">Galeri</a></li>
-    <li><a href="berita.html">Berita & Event</a></li>
+    <li><a href="berita.html">Informasi</a></li>
     <li><a href="kontak.html">Kontak</a></li>
   </ul>
-  <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+  <a href="kontak.html" class="btn btn-primary">Kontak Kami</a>
 </nav>
 
 <!-- ===== PAGE HERO ===== -->
@@ -56,8 +63,8 @@
       <span class="sep">›</span>
       <span class="current">Galeri</span>
     </div>
-    <h1>Galeri Kawasan</h1>
-    <p>Abadikan keindahan lingkungan, fasilitas, dan momen berharga kehidupan di Coatesville.</p>
+    <h1>Galeri Kegiatan</h1>
+    <p>Dokumentasi momen berharga kegiatan Posyandu Sehat Ceria — pelayanan kesehatan, olahraga bersama, dan kegiatan komunitas warga.</p>
   </div>
 </section>
 
@@ -67,17 +74,17 @@
 
     <div class="gallery-filters fade-up">
       <button class="filter-btn active" data-filter="all">Semua</button>
-      <button class="filter-btn" data-filter="kawasan">Kawasan</button>
-      <button class="filter-btn" data-filter="fasilitas">Fasilitas</button>
-      <button class="filter-btn" data-filter="kegiatan">Kegiatan Warga</button>
-      <button class="filter-btn" data-filter="lingkungan">Lingkungan</button>
+      <button class="filter-btn" data-filter="pelayanan">Pelayanan</button>
+      <button class="filter-btn" data-filter="olahraga">Olahraga</button>
+      <button class="filter-btn" data-filter="sosialisasi">Sosialisasi</button>
+      <button class="filter-btn" data-filter="kegiatan">Kegiatan Komunitas</button>
     </div>
 
     <div class="gallery-grid fade-up">
 
-      <!-- Kawasan -->
-      <div class="gallery-item wide" data-category="kawasan">
-        <img src="https://picsum.photos/seed/cv-gal-k1/1200/600" alt="Gerbang Utama Coatesville">
+      <!-- Pelayanan -->
+      <div class="gallery-item wide" data-category="pelayanan">
+        <img src="https://picsum.photos/seed/pg-p1/1200/600" alt="Pemeriksaan Kesehatan Rutin">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -85,8 +92,8 @@
         </div>
       </div>
 
-      <div class="gallery-item tall" data-category="kawasan">
-        <img src="https://picsum.photos/seed/cv-gal-k2/600/900" alt="Cluster Hunian">
+      <div class="gallery-item tall" data-category="pelayanan">
+        <img src="https://picsum.photos/seed/pg-p2/600/900" alt="Penimbangan Balita">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -94,8 +101,8 @@
         </div>
       </div>
 
-      <div class="gallery-item" data-category="kawasan">
-        <img src="https://picsum.photos/seed/cv-gal-k3/600/600" alt="Jalan Utama Kawasan">
+      <div class="gallery-item" data-category="pelayanan">
+        <img src="https://picsum.photos/seed/pg-p3/600/600" alt="Konsultasi Kesehatan">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -103,8 +110,8 @@
         </div>
       </div>
 
-      <div class="gallery-item" data-category="kawasan">
-        <img src="https://picsum.photos/seed/cv-gal-k4/600/600" alt="Gerbang Cluster">
+      <div class="gallery-item" data-category="pelayanan">
+        <img src="https://picsum.photos/seed/pg-p4/600/600" alt="Kunjungan Rumah Kader">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -112,9 +119,9 @@
         </div>
       </div>
 
-      <!-- Fasilitas -->
-      <div class="gallery-item" data-category="fasilitas">
-        <img src="https://picsum.photos/seed/cv-gal-f1/600/600" alt="Club House">
+      <!-- Olahraga -->
+      <div class="gallery-item" data-category="olahraga">
+        <img src="https://picsum.photos/seed/pg-o1/600/600" alt="Senam Lansia">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -122,8 +129,8 @@
         </div>
       </div>
 
-      <div class="gallery-item wide" data-category="fasilitas">
-        <img src="https://picsum.photos/seed/cv-gal-f2/1200/600" alt="Kolam Renang">
+      <div class="gallery-item wide" data-category="olahraga">
+        <img src="https://picsum.photos/seed/pg-o2/1200/600" alt="Senam Pagi Bersama">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -131,8 +138,8 @@
         </div>
       </div>
 
-      <div class="gallery-item" data-category="fasilitas">
-        <img src="https://picsum.photos/seed/cv-gal-f3/600/600" alt="Lapangan Olahraga">
+      <div class="gallery-item" data-category="olahraga">
+        <img src="https://picsum.photos/seed/pg-o3/600/600" alt="Olahraga Anak">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -140,8 +147,8 @@
         </div>
       </div>
 
-      <div class="gallery-item" data-category="fasilitas">
-        <img src="https://picsum.photos/seed/cv-gal-f4/600/600" alt="Taman Bermain">
+      <div class="gallery-item" data-category="olahraga">
+        <img src="https://picsum.photos/seed/pg-o4/600/600" alt="Senam Ibu Hamil">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -149,9 +156,37 @@
         </div>
       </div>
 
-      <!-- Kegiatan -->
-      <div class="gallery-item tall" data-category="kegiatan">
-        <img src="https://picsum.photos/seed/cv-gal-e1/600/900" alt="Fun Walk Warga">
+      <!-- Sosialisasi -->
+      <div class="gallery-item tall" data-category="sosialisasi">
+        <img src="https://picsum.photos/seed/pg-s1/600/900" alt="Penyuluhan Kesehatan">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="sosialisasi">
+        <img src="https://picsum.photos/seed/pg-s2/600/600" alt="Edukasi Gizi">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="sosialisasi">
+        <img src="https://picsum.photos/seed/pg-s3/600/600" alt="Pelatihan Kader">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Kegiatan Komunitas -->
+      <div class="gallery-item wide" data-category="kegiatan">
+        <img src="https://picsum.photos/seed/pg-k1/1200/600" alt="Kegiatan Komunitas Warga">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -160,7 +195,7 @@
       </div>
 
       <div class="gallery-item" data-category="kegiatan">
-        <img src="https://picsum.photos/seed/cv-gal-e2/600/600" alt="HUT Kawasan">
+        <img src="https://picsum.photos/seed/pg-k2/600/600" alt="Pemberian PMT">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -169,35 +204,7 @@
       </div>
 
       <div class="gallery-item" data-category="kegiatan">
-        <img src="https://picsum.photos/seed/cv-gal-e3/600/600" alt="Bazar Warga">
-        <div class="gallery-overlay">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Lingkungan -->
-      <div class="gallery-item wide" data-category="lingkungan">
-        <img src="https://picsum.photos/seed/cv-gal-l1/1200/600" alt="Taman Utama">
-        <div class="gallery-overlay">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="lingkungan">
-        <img src="https://picsum.photos/seed/cv-gal-l2/600/600" alt="Jogging Track">
-        <div class="gallery-overlay">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-category="lingkungan">
-        <img src="https://picsum.photos/seed/cv-gal-l3/600/600" alt="Area Hijau">
+        <img src="https://picsum.photos/seed/pg-k3/600/600" alt="Imunisasi Balita">
         <div class="gallery-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
@@ -213,20 +220,20 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">✕</button>
   <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="Foto Galeri">
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Foto Kegiatan">
   <button class="lightbox-next" id="lightboxNext">&#8250;</button>
-  <div class="lightbox-caption" id="lightboxCap">1 / 13</div>
+  <div class="lightbox-caption" id="lightboxCap">1 / 14</div>
 </div>
 
 <!-- ===== CTA ===== -->
 <section class="cta-section">
   <div class="container">
-    <div class="section-tag light fade-up">Tertarik dengan Coatesville?</div>
-    <h2 class="fade-up">Kunjungi Kawasan dan Rasakan Sendiri</h2>
-    <p class="fade-up">Jadwalkan kunjungan ke kawasan Coatesville dan biarkan keindahannya berbicara sendiri.</p>
+    <div class="section-tag light fade-up">Ingin Terlibat?</div>
+    <h2 class="fade-up">Jadilah Bagian dari Komunitas Sehat Ceria</h2>
+    <p class="fade-up">Daftarkan diri dan keluarga Anda ke Posyandu Sehat Ceria dan nikmati manfaat layanan kesehatan komunitas kami.</p>
     <div class="cta-btns fade-up">
-      <a href="kontak.html" class="btn btn-primary">Jadwalkan Kunjungan</a>
-      <a href="berita.html" class="btn btn-outline">Lihat Aktivitas Warga</a>
+      <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+      <a href="berita.html" class="btn btn-outline">Baca Artikel Kesehatan</a>
     </div>
   </div>
 </section>
@@ -237,10 +244,10 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div>
-          <div class="footer-logo-main">Coatesville</div>
-          <div class="footer-logo-sub">Kota Wisata</div>
+          <div class="footer-logo-main">Posyandu Sehat Ceria</div>
+          <div class="footer-logo-sub">RW 44 – Coatesville Kota Wisata</div>
         </div>
-        <p>Kawasan hunian eksklusif dengan lingkungan asri, fasilitas lengkap, dan komunitas harmonis di Kota Wisata, Cibubur.</p>
+        <p>Mewujudkan warga perumahan yang sehat, bahagia, aktif, produktif, dan mandiri melalui pelayanan posyandu yang berkualitas.</p>
         <div class="social-links">
           <a href="#" class="social-link" title="Facebook">FB</a>
           <a href="#" class="social-link" title="Instagram">IG</a>
@@ -252,38 +259,38 @@
         <h4>Navigasi</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="tentang.html">Tentang Coatesville</a></li>
-          <li><a href="fasilitas.html">Fasilitas</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="fasilitas.html">Layanan</a></li>
           <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="berita.html">Berita & Event</a></li>
+          <li><a href="berita.html">Informasi</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Fasilitas</h4>
+        <h4>Layanan</h4>
         <ul>
-          <li><a href="fasilitas.html">Club House</a></li>
-          <li><a href="fasilitas.html">Taman Bermain</a></li>
-          <li><a href="fasilitas.html">Area Hijau</a></li>
-          <li><a href="fasilitas.html">Keamanan 24 Jam</a></li>
-          <li><a href="fasilitas.html">Tempat Ibadah</a></li>
-          <li><a href="fasilitas.html">Area Olahraga</a></li>
+          <li><a href="fasilitas.html">Pemeriksaan Dasar</a></li>
+          <li><a href="fasilitas.html">Kunjungan Rumah</a></li>
+          <li><a href="fasilitas.html">Pemberian PMT</a></li>
+          <li><a href="fasilitas.html">Edukasi Kesehatan</a></li>
+          <li><a href="fasilitas.html">Olahraga</a></li>
+          <li><a href="fasilitas.html">Akses Vaksinasi</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Kontak</h4>
         <ul>
-          <li><a href="#">Jl. Coatesville No. 1</a></li>
-          <li><a href="#">Kota Wisata, Cibubur</a></li>
-          <li><a href="#">Bekasi 17435</a></li>
-          <li><a href="tel:02112345678">(021) 1234-5678</a></li>
-          <li><a href="mailto:info@coatesville.id">info@coatesville.id</a></li>
+          <li><a href="#">Gedung Serba Guna</a></li>
+          <li><a href="#">Jalan Taman Phase 2 Coatesville</a></li>
+          <li><a href="#">Kel. Ciangsana, Kec. Gunung Putri</a></li>
+          <li><a href="#">Kab. Bogor 16968</a></li>
+          <li><a href="#">Hotline: Segera Tersedia</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Coatesville – Kota Wisata. Hak cipta dilindungi.</span>
-      <span>Dibuat dengan ♥ untuk komunitas Coatesville</span>
+      <span>&copy; 2026 Posyandu Sehat Ceria – RW 44 Coatesville Kota Wisata. Hak cipta dilindungi.</span>
+      <span>Melayani dengan sepenuh hati</span>
     </div>
   </div>
 </footer>
