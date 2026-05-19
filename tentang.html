@@ -63,13 +63,229 @@
     }
     .sambutan-author small { font-size: 0.82rem; color: var(--text-muted); }
 
-    .vms-img-wrap {
+    /* ---- VMS Design ---- */
+    .vms-visi-card {
+      background: linear-gradient(135deg, #0D2419 0%, var(--primary) 45%, #2D6A4F 100%);
       border-radius: var(--radius-lg);
+      padding: 56px 64px;
+      position: relative;
       overflow: hidden;
-      box-shadow: var(--shadow-lg);
+      margin-bottom: 48px;
+    }
+    .vms-visi-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 22rem;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      top: -80px; left: 16px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .vms-visi-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--accent), #E8D5B0, var(--accent));
+    }
+    .vms-visi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,169,110,0.18);
+      border: 1px solid rgba(201,169,110,0.4);
+      color: var(--accent-light);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      position: relative; z-index: 1;
+    }
+    .vms-visi-badge svg { width: 12px; height: 12px; }
+    .vms-visi-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-style: italic;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.65;
+      max-width: 760px;
+      position: relative; z-index: 1;
+    }
+    .vms-visi-text em {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .vms-visi-deco {
+      position: absolute;
+      right: 56px; top: 50%;
+      transform: translateY(-50%);
+      width: 110px; height: 110px;
+      background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .vms-visi-deco svg { width: 52px; height: 52px; opacity: 0.35; }
+
+    /* Section label separator */
+    .vms-section-label {
+      display: flex;
+      align-items: center;
+      gap: 20px;
       margin-bottom: 28px;
     }
-    .vms-img-wrap img { width: 100%; height: auto; display: block; }
+    .vms-label-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border));
+    }
+    .vms-label-line.right {
+      background: linear-gradient(to left, transparent, var(--border));
+    }
+    .vms-section-label span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-pale);
+      padding: 6px 18px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    /* Misi grid 3+2 centered */
+    .vms-misi-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .vms-misi-card {
+      grid-column: span 2;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--border);
+      transition: var(--tr);
+      position: relative;
+    }
+    .vms-misi-card:nth-child(4) { grid-column: 2 / span 2; }
+    .vms-misi-card:nth-child(5) { grid-column: 4 / span 2; }
+    .vms-misi-card:hover {
+      border-left-color: var(--primary-mid);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .vms-misi-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .vms-misi-icon {
+      width: 42px; height: 42px;
+      background: var(--accent-pale);
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .vms-misi-card p {
+      font-size: 0.86rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Strategi 4 cards with arrows */
+    .vms-strategi-wrap {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+    .vms-strategi-card {
+      flex: 1;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 22px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--tr);
+      border-top: 4px solid transparent;
+    }
+    .vms-strategi-card:nth-child(1) { border-top-color: #74C69D; }
+    .vms-strategi-card:nth-child(3) { border-top-color: #40916C; }
+    .vms-strategi-card:nth-child(5) { border-top-color: var(--primary); }
+    .vms-strategi-card:nth-child(7) { border-top-color: var(--accent); }
+    .vms-strategi-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .vms-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .vms-arrow svg { width: 22px; height: 22px; }
+    .vms-strategi-badge {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .vms-strategi-card:nth-child(1) .vms-strategi-badge { background: linear-gradient(135deg, #52B788, #74C69D); }
+    .vms-strategi-card:nth-child(3) .vms-strategi-badge { background: linear-gradient(135deg, #2D6A4F, #40916C); }
+    .vms-strategi-card:nth-child(5) .vms-strategi-badge { background: linear-gradient(135deg, #1B4332, #2D6A4F); }
+    .vms-strategi-card:nth-child(7) .vms-strategi-badge { background: linear-gradient(135deg, #C9A96E, #D4B47E); }
+    .vms-strategi-card .vms-strat-icon {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .vms-strategi-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .vms-strategi-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .vms-misi-grid { grid-template-columns: repeat(2, 1fr); }
+      .vms-misi-card, .vms-misi-card:nth-child(4), .vms-misi-card:nth-child(5) { grid-column: span 1; }
+      .vms-strategi-wrap { flex-direction: column; gap: 16px; }
+      .vms-arrow { display: none; }
+      .vms-visi-card { padding: 40px 32px; }
+      .vms-visi-deco { display: none; }
+    }
+    @media (max-width: 540px) {
+      .vms-misi-grid { grid-template-columns: 1fr; }
+    }
 
     .program-grid {
       display: grid;
@@ -268,53 +484,100 @@
       <div class="divider"></div>
     </div>
 
-    <div class="vms-img-wrap fade-up">
-      <img src="images/vms-posyandu.jpeg" alt="Visi, Misi dan Strategi Posyandu Sehat Ceria">
-    </div>
-
-    <div class="grid-3 fade-up" style="margin-top:0;">
-      <div class="facility-card">
-        <div class="facility-icon">🎯</div>
-        <h3>Visi</h3>
-        <p>Mewujudkan Posyandu untuk Warga Perumahan yang sehat, bahagia, aktif, produktif, dan mandiri.</p>
+    <!-- VISI -->
+    <div class="vms-visi-card fade-up">
+      <div class="vms-visi-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        Visi Posyandu Sehat Ceria
       </div>
-      <div class="facility-card">
-        <div class="facility-icon">📋</div>
-        <h3>Misi</h3>
-        <p>Meningkatkan kompetensi kader, membangkitkan kesadaran berperilaku sehat, dan menyediakan layanan pemeriksaan yang terjangkau bagi seluruh siklus hidup.</p>
-      </div>
-      <div class="facility-card">
-        <div class="facility-icon">🗺️</div>
-        <h3>Strategi</h3>
-        <p>Penguasaan keterampilan kader, perbaikan tata kelola, penyediaan infrastruktur berkelanjutan, dan penguatan kepemimpinan posyandu.</p>
+      <p class="vms-visi-text">
+        Mewujudkan Posyandu untuk Warga Perumahan yang
+        <em>sehat</em>, <em>bahagia</em>, <em>aktif</em>,
+        <em>produktif</em>, dan <em>mandiri</em>.
+      </p>
+      <div class="vms-visi-deco">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
       </div>
     </div>
 
-    <div style="background:var(--bg); border-radius:var(--radius-lg); padding:40px; margin-top:40px;" class="fade-up">
-      <h3 style="margin-bottom:20px; color:var(--primary);">5 Butir Misi</h3>
-      <div style="display:grid; gap:14px;">
-        <div class="location-item">
-          <div class="location-dot"></div>
-          <div><p style="margin:0; color:var(--text);">Meningkatkan kemampuan dan ketrampilan kader kesehatan.</p></div>
-        </div>
-        <div class="location-item">
-          <div class="location-dot"></div>
-          <div><p style="margin:0; color:var(--text);">Membangkitkan kesadaran masyarakat berperilaku sehat.</p></div>
-        </div>
-        <div class="location-item">
-          <div class="location-dot"></div>
-          <div><p style="margin:0; color:var(--text);">Memenuhi layanan pemeriksaan dan skrining kesehatan dasar yang terjangkau bagi warga masyarakat pada seluruh siklus hidup.</p></div>
-        </div>
-        <div class="location-item">
-          <div class="location-dot"></div>
-          <div><p style="margin:0; color:var(--text);">Menyediakan sarana dan prasarana pelayanan posyandu yang cukup dan berstandar.</p></div>
-        </div>
-        <div class="location-item">
-          <div class="location-dot"></div>
-          <div><p style="margin:0; color:var(--text);">Menjalankan dan mengembangkan tata kelola pelayanan posyandu yang efektif dan berkelanjutan.</p></div>
-        </div>
+    <!-- MISI -->
+    <div class="vms-section-label fade-up">
+      <div class="vms-label-line"></div>
+      <span>5 Butir Misi</span>
+      <div class="vms-label-line right"></div>
+    </div>
+
+    <div class="vms-misi-grid fade-up">
+      <div class="vms-misi-card">
+        <span class="vms-misi-num">01</span>
+        <div class="vms-misi-icon">👥</div>
+        <p>Meningkatkan kemampuan dan ketrampilan kader kesehatan.</p>
+      </div>
+      <div class="vms-misi-card">
+        <span class="vms-misi-num">02</span>
+        <div class="vms-misi-icon">💚</div>
+        <p>Membangkitkan kesadaran masyarakat berperilaku sehat.</p>
+      </div>
+      <div class="vms-misi-card">
+        <span class="vms-misi-num">03</span>
+        <div class="vms-misi-icon">🩺</div>
+        <p>Memenuhi layanan pemeriksaan dan skrining kesehatan dasar yang terjangkau bagi warga masyarakat pada seluruh siklus hidup.</p>
+      </div>
+      <div class="vms-misi-card">
+        <span class="vms-misi-num">04</span>
+        <div class="vms-misi-icon">🏗️</div>
+        <p>Menyediakan sarana dan prasarana pelayanan posyandu yang cukup dan berstandar.</p>
+      </div>
+      <div class="vms-misi-card">
+        <span class="vms-misi-num">05</span>
+        <div class="vms-misi-icon">⚙️</div>
+        <p>Menjalankan dan mengembangkan tata kelola pelayanan posyandu yang efektif dan berkelanjutan.</p>
       </div>
     </div>
+
+    <!-- STRATEGI -->
+    <div class="vms-section-label fade-up">
+      <div class="vms-label-line"></div>
+      <span>4 Strategi Utama</span>
+      <div class="vms-label-line right"></div>
+    </div>
+
+    <div class="vms-strategi-wrap fade-up">
+      <div class="vms-strategi-card">
+        <div class="vms-strategi-badge">1</div>
+        <span class="vms-strat-icon">🎓</span>
+        <h4>Penguasaan Keterampilan Kader</h4>
+        <p>Penguasaan keterampilan dan kecakapan kader kesehatan secara berkelanjutan.</p>
+      </div>
+      <div class="vms-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="vms-strategi-card">
+        <div class="vms-strategi-badge">2</div>
+        <span class="vms-strat-icon">📊</span>
+        <h4>Perbaikan Tata Kelola</h4>
+        <p>Pengembangan dan perbaikan tata kelola posyandu yang efektif dan terukur.</p>
+      </div>
+      <div class="vms-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="vms-strategi-card">
+        <div class="vms-strategi-badge">3</div>
+        <span class="vms-strat-icon">🖥️</span>
+        <h4>Infrastruktur Berkelanjutan</h4>
+        <p>Penyediaan infrastruktur dan platform posyandu yang berkelanjutan.</p>
+      </div>
+      <div class="vms-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="vms-strategi-card">
+        <div class="vms-strategi-badge">4</div>
+        <span class="vms-strat-icon">🏆</span>
+        <h4>Penguatan Kepemimpinan</h4>
+        <p>Penguatan kepemimpinan pengelolaan dan pelayanan posyandu.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
