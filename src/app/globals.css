@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif text-primary leading-tight;
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.6rem); }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+  h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+
+  p { @apply text-muted leading-relaxed; }
+  a { @apply transition-all duration-300; }
+  img { @apply max-w-full; }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-6;
+  }
+
+  .section {
+    @apply py-[88px];
+  }
+
+  .section-tag {
+    @apply inline-block bg-accent-pale text-accent text-[0.72rem] font-bold tracking-[2.5px] uppercase px-4 py-1.5 rounded-full mb-3.5;
+  }
+
+  .section-tag-light {
+    @apply inline-block bg-[rgba(201,169,110,0.15)] text-accent-light text-[0.72rem] font-bold tracking-[2.5px] uppercase px-4 py-1.5 rounded-full mb-3.5;
+  }
+
+  .divider {
+    @apply w-14 h-[3px] bg-gold-gradient rounded-sm mx-auto mt-3.5;
+  }
+
+  .divider-left {
+    @apply mx-0;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent text-white font-semibold text-sm font-sans border-2 border-accent transition-all duration-300 hover:bg-primary hover:border-primary hover:-translate-y-0.5 hover:shadow-card;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-white font-semibold text-sm font-sans border-2 border-white/70 transition-all duration-300 hover:bg-white hover:text-primary hover:border-white hover:-translate-y-0.5;
+  }
+
+  .btn-outline-green {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-primary font-semibold text-sm font-sans border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5;
+  }
+
+  .card-article {
+    @apply bg-white rounded-2xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-lg;
+  }
+
+  .facility-card {
+    @apply bg-white rounded-2xl p-8 shadow-card text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-card-lg;
+  }
+
+  .value-card {
+    @apply bg-bg rounded-2xl p-8 shadow-card text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-card-lg;
+  }
+
+  .cta-section {
+    @apply bg-cta-gradient py-[88px] text-center;
+  }
+
+  .page-hero {
+    @apply bg-hero-gradient py-32 text-center text-white relative overflow-hidden;
+  }
+}
+
+/* Fade-up animation for intersection observer */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-up:nth-child(4) { transition-delay: 0.3s; }
+.fade-up:nth-child(5) { transition-delay: 0.4s; }
+.fade-up:nth-child(6) { transition-delay: 0.5s; }
+
+/* Gold text */
+.text-gold { color: #C9A96E; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F8F5EE; }
+::-webkit-scrollbar-thumb { background: #40916C; border-radius: 3px; }
