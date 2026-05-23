@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── CSS Custom Properties ─────────────────────────────── */
+:root {
+  --accent-pale:   245 237 216;  /* #F5EDD8 */
+  --color-bg:      248 245 238;  /* #F8F5EE */
+  --color-border:  232 228 220;  /* #E8E4DC */
+  --color-muted:   99  99  102;  /* #636366 */
+  --color-ink:     28  28  30;   /* #1C1C1E */
+  --surface:       255 255 255;  /* white   */
+}
+
+.dark {
+  --accent-pale:   38  28  8;    /* dark gold tint bg */
+  --color-bg:      12  20  15;   /* #0C140F very dark */
+  --color-border:  32  54  40;   /* #203628 dark border */
+  --color-muted:   138 172 153;  /* #8AAC99 */
+  --color-ink:     218 236 226;  /* #DAECE2 light text  */
+  --surface:       18  32  23;   /* #122017 dark surface */
+}
+
+/* ─── Base Styles ────────────────────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -23,6 +43,30 @@
   p { @apply text-muted leading-relaxed; }
   a { @apply transition-all duration-300; }
   img { @apply max-w-full; }
+
+  /* Dark mode: headings become light green for readability */
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4 {
+    color: #74C69D;
+  }
+
+  /* Dark mode: bg-white sections → dark surface */
+  html.dark .bg-white {
+    background-color: rgb(var(--surface));
+  }
+
+  /* Dark mode: shadow adjustments */
+  html.dark .shadow-card {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  }
+  html.dark .shadow-card-lg {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  }
+  html.dark .shadow-nav {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  }
 }
 
 @layer components {
@@ -83,7 +127,35 @@
   }
 }
 
-/* Fade-up animation for intersection observer */
+/* Dark mode: card & form overrides */
+html.dark .facility-card,
+html.dark .value-card,
+html.dark .card-article {
+  background-color: rgb(var(--surface));
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: rgb(var(--surface));
+  color: rgb(var(--color-ink));
+  border-color: rgb(var(--color-border));
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: rgb(var(--color-muted));
+}
+
+html.dark .section-tag {
+  background-color: rgb(var(--accent-pale));
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Fade-up kept for legacy (SearchModal uses it) */
 .fade-up {
   opacity: 0;
   transform: translateY(24px);
@@ -94,13 +166,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Stagger delays */
-.fade-up:nth-child(2) { transition-delay: 0.1s; }
-.fade-up:nth-child(3) { transition-delay: 0.2s; }
-.fade-up:nth-child(4) { transition-delay: 0.3s; }
-.fade-up:nth-child(5) { transition-delay: 0.4s; }
-.fade-up:nth-child(6) { transition-delay: 0.5s; }
 
 /* Gold text */
 .text-gold { color: #C9A96E; }

@@ -5,8 +5,9 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 import { navItems, type NavItem } from '@/lib/navigation'
+import ThemeToggle from '@/components/ui/ThemeToggle'
+import SearchModal from '@/components/ui/SearchModal'
 
-// Extended NavItem for Mega Menu
 interface MegaItem extends NavItem {
   desc?: string
   icon?: string
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const [searchOpen, setSearchOpen] = useState(false)
   const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -36,6 +38,18 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
+  // Global keyboard shortcut: Cmd+K / Ctrl+K
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault()
+        setSearchOpen((o) => !o)
+      }
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [])
+
   const handleMouseEnter = (label: string) => {
     if (dropdownTimer.current) clearTimeout(dropdownTimer.current)
     setOpenDropdown(label)
@@ -48,15 +62,16 @@ export default function Navbar() {
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href)
 
-  // Identify mega menu items
   const megaMenuItems = ['Infrastruktur', 'Kegiatan']
 
   return (
     <>
+      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
+
       <nav
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-nav py-3'
+            ? 'bg-white/95 dark:bg-[rgb(18,32,24,0.97)] backdrop-blur-md shadow-nav py-3'
             : 'bg-transparent py-6'
         }`}
       >
@@ -76,7 +91,7 @@ export default function Navbar() {
               <div className="flex flex-col leading-none">
                 <span
                   className={`font-serif font-bold text-[1.2rem] transition-colors duration-300 ${
-                    scrolled ? 'text-primary' : 'text-white'
+                    scrolled ? 'text-primary dark:text-primary-light' : 'text-white'
                   }`}
                 >
                   Portal RW 44
@@ -105,8 +120,8 @@ export default function Navbar() {
                     className={`flex items-center gap-1.5 text-[0.875rem] font-semibold transition-all duration-300 pb-1 relative group ${
                       scrolled
                         ? isActive(item.href)
-                          ? 'text-primary'
-                          : 'text-ink hover:text-primary-mid'
+                          ? 'text-primary dark:text-primary-light'
+                          : 'text-ink dark:text-ink hover:text-primary-mid dark:hover:text-primary-light'
                         : isActive(item.href)
                         ? 'text-accent'
                         : 'text-white/90 hover:text-white'
@@ -131,13 +146,11 @@ export default function Navbar() {
                     />
                   </Link>
 
-                  {/* Dropdown / Mega Menu */}
                   {item.children && openDropdown === item.label && (
                     <>
                       {megaMenuItems.includes(item.label) ? (
-                        /* Mega Menu Layout */
                         <div
-                          className="absolute top-full left-0 right-0 mt-3 bg-white rounded-3xl shadow-card-lg border border-border p-8 z-50 animate-fade-up"
+                          className="absolute top-full left-0 right-0 mt-3 bg-white dark:bg-[rgb(var(--surface))] rounded-3xl shadow-card-lg border border-border p-8 z-50 animate-fade-up"
                           onMouseEnter={() => handleMouseEnter(item.label)}
                           onMouseLeave={handleMouseLeave}
                         >
@@ -148,7 +161,7 @@ export default function Navbar() {
                               <p className="text-xs leading-relaxed text-muted">
                                 Temukan informasi lengkap mengenai {item.label.toLowerCase()} di lingkungan RW 44 Coatesville Kota Wisata.
                               </p>
-                              <Link href={item.href} className="inline-block mt-4 text-xs font-bold text-primary hover:text-accent transition-colors">
+                              <Link href={item.href} className="inline-block mt-4 text-xs font-bold text-primary dark:text-primary-light hover:text-accent transition-colors">
                                 Lihat Semua →
                               </Link>
                             </div>
@@ -159,11 +172,11 @@ export default function Navbar() {
                                   href={child.href}
                                   className="group/item flex items-start gap-3.5 p-3 rounded-2xl hover:bg-accent-pale transition-all duration-300"
                                 >
-                                  <div className="w-10 h-10 bg-bg rounded-xl flex items-center justify-center text-lg flex-shrink-0 group-hover/item:bg-white group-hover/item:scale-110 transition-all duration-300">
+                                  <div className="w-10 h-10 bg-bg rounded-xl flex items-center justify-center text-lg flex-shrink-0 group-hover/item:bg-white dark:group-hover/item:bg-surface group-hover/item:scale-110 transition-all duration-300">
                                     {getIconForLabel(child.label)}
                                   </div>
                                   <div>
-                                    <div className="text-[0.85rem] font-bold text-ink group-hover/item:text-primary transition-colors">
+                                    <div className="text-[0.85rem] font-bold text-ink group-hover/item:text-primary dark:group-hover/item:text-primary-light transition-colors">
                                       {child.label}
                                     </div>
                                     <p className="text-[0.7rem] text-muted mt-0.5 line-clamp-1">
@@ -176,19 +189,18 @@ export default function Navbar() {
                           </div>
                         </div>
                       ) : (
-                        /* Standard Dropdown */
                         <div
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-2xl shadow-card-lg border border-border py-2.5 min-w-[240px] z-50 animate-fade-up"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white dark:bg-[rgb(var(--surface))] rounded-2xl shadow-card-lg border border-border py-2.5 min-w-[240px] z-50 animate-fade-up"
                           onMouseEnter={() => handleMouseEnter(item.label)}
                           onMouseLeave={handleMouseLeave}
                         >
-                          <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-border rotate-45" />
+                          <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-[rgb(var(--surface))] border-t border-l border-border rotate-45" />
                           {item.children.map((child) => (
                             <Link
                               key={child.href}
                               href={child.href}
-                              className={`block px-5 py-3 text-[0.85rem] font-semibold transition-all duration-200 hover:bg-accent-pale hover:text-primary ${
-                                isActive(child.href) ? 'text-primary bg-accent-pale' : 'text-ink'
+                              className={`block px-5 py-3 text-[0.85rem] font-semibold transition-all duration-200 hover:bg-accent-pale hover:text-primary dark:hover:text-primary-light ${
+                                isActive(child.href) ? 'text-primary dark:text-primary-light bg-accent-pale' : 'text-ink'
                               }`}
                             >
                               <div className="flex items-center justify-between">
@@ -205,14 +217,35 @@ export default function Navbar() {
               ))}
             </ul>
 
-            {/* CTA + Hamburger */}
-            <div className="flex items-center gap-3">
-              <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20 ml-2">
+            {/* CTA + Search + Theme + Hamburger */}
+            <div className="flex items-center gap-2">
+              {/* Search Button */}
+              <button
+                onClick={() => setSearchOpen(true)}
+                className={`hidden lg:flex items-center gap-2 px-3 py-2 rounded-xl text-sm transition-all duration-300 border ${
+                  scrolled
+                    ? 'bg-bg border-border text-muted hover:text-ink hover:border-primary/30'
+                    : 'bg-white/10 border-white/20 text-white/70 hover:bg-white/20 hover:text-white'
+                }`}
+                title="Cari (⌘K)"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+                </svg>
+                <span className="text-xs hidden xl:block">Cari...</span>
+                <kbd className="hidden xl:flex items-center text-[0.6rem] border border-current/30 rounded px-1 py-0.5 font-mono opacity-60">⌘K</kbd>
+              </button>
+
+              {/* Theme Toggle */}
+              <ThemeToggle scrolled={scrolled} />
+
+              {/* Portal + Login */}
+              <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20 ml-1">
                 <Link
                   href="/portal"
                   className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
                     scrolled
-                      ? 'text-primary hover:bg-primary/5'
+                      ? 'text-primary dark:text-primary-light hover:bg-primary/5'
                       : 'text-white hover:bg-white/10'
                   }`}
                 >
@@ -242,33 +275,18 @@ export default function Navbar() {
                 className="lg:hidden flex flex-col gap-[6px] p-2 cursor-pointer bg-transparent border-0"
                 aria-label="Toggle Menu"
               >
-                <span
-                  className={`block w-6 h-0.5 rounded-full transition-all duration-300 origin-center ${
-                    mobileOpen
-                      ? 'rotate-45 translate-y-[8px] bg-white'
-                      : scrolled
-                      ? 'bg-primary'
-                      : 'bg-white'
-                  }`}
-                />
-                <span
-                  className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${
-                    mobileOpen
-                      ? 'opacity-0 bg-white'
-                      : scrolled
-                      ? 'bg-primary'
-                      : 'bg-white'
-                  }`}
-                />
-                <span
-                  className={`block w-6 h-0.5 rounded-full transition-all duration-300 origin-center ${
-                    mobileOpen
-                      ? '-rotate-45 -translate-y-[8px] bg-white'
-                      : scrolled
-                      ? 'bg-primary'
-                      : 'bg-white'
-                  }`}
-                />
+                {[0, 1, 2].map((i) => (
+                  <span
+                    key={i}
+                    className={`block w-6 h-0.5 rounded-full transition-all duration-300 origin-center ${
+                      i === 0
+                        ? mobileOpen ? 'rotate-45 translate-y-[8px] bg-white' : scrolled ? 'bg-primary dark:bg-primary-light' : 'bg-white'
+                        : i === 1
+                        ? mobileOpen ? 'opacity-0 bg-white' : scrolled ? 'bg-primary dark:bg-primary-light' : 'bg-white'
+                        : mobileOpen ? '-rotate-45 -translate-y-[8px] bg-white' : scrolled ? 'bg-primary dark:bg-primary-light' : 'bg-white'
+                    }`}
+                  />
+                ))}
               </button>
             </div>
           </div>
@@ -285,7 +303,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <nav
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-primary z-[999] lg:hidden transition-transform duration-500 cubic-bezier(0.4,0,0.2,1) flex flex-col shadow-2xl ${
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-primary dark:bg-[#0D1F15] z-[999] lg:hidden transition-transform duration-500 flex flex-col shadow-2xl ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -294,15 +312,26 @@ export default function Navbar() {
             <span className="font-serif font-bold text-white text-xl">Menu Utama</span>
             <span className="text-[0.6rem] text-white/50 tracking-[2px] uppercase mt-1">Portal RW 44</span>
           </div>
-          <button
-            onClick={() => setMobileOpen(false)}
-            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
-            aria-label="Tutup Menu"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+              aria-label="Cari"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+              aria-label="Tutup Menu"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         <ul className="flex-1 overflow-y-auto px-8 py-6 space-y-1">
@@ -384,7 +413,6 @@ export default function Navbar() {
   )
 }
 
-// Helper functions for Mega Menu content
 function getIconForLabel(label: string): string {
   const icons: Record<string, string> = {
     'Pos Sekuriti': '🔒',
