@@ -35,7 +35,7 @@ export default function PosyanduSubnav() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`relative flex items-center gap-1 px-2 py-2.5 text-[0.68rem] font-semibold flex-shrink-0 transition-colors duration-200 whitespace-nowrap ${
+                  className={`relative flex items-center gap-1 px-2 py-2.5 text-[9.5px] font-semibold flex-shrink-0 transition-colors duration-200 whitespace-nowrap ${
                     active
                       ? 'text-primary dark:text-primary-light'
                       : 'text-muted hover:text-ink dark:hover:text-ink'
