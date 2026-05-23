@@ -194,24 +194,14 @@ export default function Navbar() {
 
             {/* CTA + Search + Theme + Hamburger */}
             <div className="flex items-center gap-2">
-              {/* Portal + Login */}
-              <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20 ml-1">
-                <Link
-                  href="/portal"
-                  className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
-                    scrolled
-                      ? 'text-primary dark:text-primary-light hover:bg-primary/5'
-                      : 'text-white hover:bg-white/10'
-                  }`}
-                >
-                  Portal
-                </Link>
+              {/* Login */}
+              <div className="hidden lg:flex items-center ml-1">
                 <Link
                   href="/auth/login"
                   className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
                     scrolled
-                      ? 'bg-primary text-white shadow-sm'
-                      : 'bg-white text-primary shadow-sm'
+                      ? 'bg-primary text-white shadow-sm hover:bg-primary-mid'
+                      : 'bg-white text-primary shadow-sm hover:bg-accent hover:text-white'
                   }`}
                 >
                   Masuk
@@ -340,14 +330,9 @@ export default function Navbar() {
         </ul>
 
         <div className="px-8 pb-10 pt-6 border-t border-white/10 space-y-4">
-          <div className="flex gap-3">
-            <Link href="/portal" className="flex-1 text-center bg-white/5 border border-white/20 text-white text-[0.8rem] font-bold py-3 rounded-2xl hover:bg-white/10 transition-colors">
-              Portal Warga
-            </Link>
-            <Link href="/auth/login" className="flex-1 text-center bg-white text-primary text-[0.8rem] font-bold py-3 rounded-2xl shadow-lg active:scale-95 transition-all">
-              Masuk
-            </Link>
-          </div>
+          <Link href="/auth/login" className="block text-center bg-white text-primary text-[0.8rem] font-bold py-3 rounded-2xl shadow-lg active:scale-95 transition-all">
+            Masuk
+          </Link>
           <Link href="/kontak" className="btn-primary w-full text-center justify-center py-3.5 rounded-2xl">
             Kontak Kami
           </Link>

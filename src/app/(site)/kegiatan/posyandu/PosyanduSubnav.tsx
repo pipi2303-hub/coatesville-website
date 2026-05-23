@@ -18,9 +18,9 @@ export default function PosyanduSubnav() {
       <div className="container">
         <div className="flex items-center">
           {/* Brand pill */}
-          <div className="flex items-center gap-1.5 pr-4 mr-2 border-r border-border flex-shrink-0">
-            <span className="text-base">🏥</span>
-            <span className="text-[0.65rem] font-bold text-accent uppercase tracking-widest hidden sm:block">
+          <div className="flex items-center gap-1 pr-3 mr-1.5 border-r border-border flex-shrink-0">
+            <span className="text-sm">🏥</span>
+            <span className="text-[0.55rem] font-bold text-accent uppercase tracking-widest hidden sm:block">
               Posyandu
             </span>
           </div>
@@ -35,13 +35,13 @@ export default function PosyanduSubnav() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`relative flex items-center gap-1.5 px-3 py-3.5 text-xs font-semibold flex-shrink-0 transition-colors duration-200 whitespace-nowrap ${
+                  className={`relative flex items-center gap-1 px-2 py-2.5 text-[0.68rem] font-semibold flex-shrink-0 transition-colors duration-200 whitespace-nowrap ${
                     active
                       ? 'text-primary dark:text-primary-light'
                       : 'text-muted hover:text-ink dark:hover:text-ink'
                   }`}
                 >
-                  <span className="text-sm">{l.icon}</span>
+                  <span className="text-xs">{l.icon}</span>
                   <span>{l.label}</span>
                   {active && (
                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary dark:bg-primary-light rounded-t-full" />
