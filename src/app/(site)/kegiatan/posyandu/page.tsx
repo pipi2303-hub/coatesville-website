@@ -4,6 +4,7 @@ import Link from 'next/link'
 import PageHero from '@/components/ui/PageHero'
 import SectionHeader from '@/components/ui/SectionHeader'
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll'
+import PosyanduSubnav from './PosyanduSubnav'
 
 export const metadata: Metadata = {
   title: 'Posyandu Sehat Ceria',
@@ -85,6 +86,7 @@ export default function PosyanduPage() {
         subtitle="Pos Pelayanan Terpadu RW 44 Coatesville yang melayani warga dari segala usia dengan pendekatan Integrasi Layanan Primer."
         breadcrumb={[{ label: 'Home' }, { label: 'Kegiatan' }, { label: 'Posyandu Sehat Ceria' }]}
       />
+      <PosyanduSubnav />
 
       {/* Profil */}
       <section className="section bg-white">

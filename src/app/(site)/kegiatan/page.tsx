@@ -4,6 +4,7 @@ import Link from 'next/link'
 import PageHero from '@/components/ui/PageHero'
 import SectionHeader from '@/components/ui/SectionHeader'
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll'
+import EventCalendar from './EventCalendar'
 
 export const metadata: Metadata = {
   title: 'Kegiatan Komunitas',
@@ -87,23 +88,17 @@ export default function KegiatanPage() {
         breadcrumb={[{ label: 'Home' }, { label: 'Kegiatan' }]}
       />
 
-      {/* Upcoming Events */}
-      <section className="bg-white border-b border-border py-6">
+      {/* Event Calendar */}
+      <section className="section bg-bg">
         <div className="container">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="section-tag">Agenda Terdekat</div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {upcomingEvents.map((e, i) => (
-              <div key={i} className="bg-bg rounded-xl p-4 border border-border">
-                <div className="text-[0.65rem] font-bold text-accent uppercase tracking-wider mb-1">{e.date}</div>
-                <h4 className="text-sm font-semibold text-primary mb-1">{e.title}</h4>
-                <div className="flex items-center gap-1 text-xs text-muted">
-                  <span>📍</span> {e.loc}
-                </div>
-              </div>
-            ))}
-          </div>
+          <SectionHeader
+            tag="Kalender Kegiatan"
+            title="Agenda Komunitas RW 44"
+            subtitle="Klik pada tanggal untuk melihat detail kegiatan. Gunakan filter kategori untuk agenda yang lebih spesifik."
+          />
+          <AnimateOnScroll>
+            <EventCalendar />
+          </AnimateOnScroll>
         </div>
       </section>
 
