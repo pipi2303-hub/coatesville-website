@@ -4,6 +4,7 @@
 
 /* ─── CSS Custom Properties ─────────────────────────────── */
 :root {
+  --banner-h: 32px;
   --accent-pale:   245 237 216;  /* #F5EDD8 */
   --color-bg:      248 245 238;  /* #F8F5EE */
   --color-border:  232 228 220;  /* #E8E4DC */

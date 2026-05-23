@@ -21,7 +21,7 @@ const variants = {
 
 export default function PageHero({ tag, title, subtitle, breadcrumb }: Props) {
   return (
-    <section className="bg-hero-gradient pt-36 pb-20 text-center text-white relative overflow-hidden">
+    <section className="bg-hero-gradient pt-16 pb-20 text-center text-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-mid/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 

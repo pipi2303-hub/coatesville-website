@@ -49,10 +49,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
+        className={`w-full transition-all duration-500 ${
           scrolled
             ? 'bg-white/95 dark:bg-[rgb(18,32,24,0.97)] backdrop-blur-md shadow-nav py-3'
-            : 'bg-transparent py-6'
+            : 'bg-hero-gradient py-6'
         }`}
       >
         <div className="container">
@@ -239,7 +239,7 @@ export default function Navbar() {
 
       {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-primary/40 backdrop-blur-sm z-[998] lg:hidden transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-primary/40 backdrop-blur-sm z-[1002] lg:hidden transition-opacity duration-500 ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setMobileOpen(false)}
@@ -247,7 +247,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <nav
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-primary dark:bg-[#0D1F15] z-[999] lg:hidden transition-transform duration-500 flex flex-col shadow-2xl ${
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-primary dark:bg-[#0D1F15] z-[1003] lg:hidden transition-transform duration-500 flex flex-col shadow-2xl ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

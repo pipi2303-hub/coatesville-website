@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const announcements = [
@@ -12,10 +12,20 @@ const announcements = [
 export default function AnnouncementBanner() {
   const [visible, setVisible] = useState(true)
 
+  useEffect(() => {
+    document.documentElement.style.setProperty('--banner-h', '32px')
+    return () => document.documentElement.style.setProperty('--banner-h', '0px')
+  }, [])
+
   if (!visible) return null
 
+  const dismiss = () => {
+    document.documentElement.style.setProperty('--banner-h', '0px')
+    setVisible(false)
+  }
+
   return (
-    <div className="bg-primary text-white text-xs py-2 px-4 flex items-center gap-3 overflow-hidden">
+    <div className="h-8 bg-primary text-white text-xs px-4 flex items-center gap-3 overflow-hidden">
       <span className="bg-accent text-primary font-bold px-2 py-0.5 rounded text-[0.6rem] flex-shrink-0 hidden sm:inline">📢 INFO</span>
       <div className="flex-1 overflow-hidden">
         <div className="whitespace-nowrap animate-marquee inline-block">
@@ -28,7 +38,7 @@ export default function AnnouncementBanner() {
         </div>
       </div>
       <Link href="/berita" className="text-white/70 hover:text-white flex-shrink-0 hidden sm:inline text-[0.65rem] underline">Selengkapnya</Link>
-      <button onClick={() => setVisible(false)} className="text-white/60 hover:text-white flex-shrink-0 ml-1" aria-label="Tutup">✕</button>
+      <button onClick={dismiss} className="text-white/60 hover:text-white flex-shrink-0 ml-1" aria-label="Tutup">✕</button>
     </div>
   )
 }

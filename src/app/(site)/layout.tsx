@@ -6,8 +6,10 @@ import AnnouncementBanner from '@/components/ui/AnnouncementBanner'
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <AnnouncementBanner />
-      <Navbar />
+      <header className="sticky top-0 z-[1000]">
+        <AnnouncementBanner />
+        <Navbar />
+      </header>
       <main>{children}</main>
       <Footer />
       <FloatingWhatsApp />

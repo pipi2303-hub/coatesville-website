@@ -14,7 +14,7 @@ const links = [
 export default function PosyanduSubnav() {
   const pathname = usePathname()
   return (
-    <div className="bg-white dark:bg-[rgb(var(--surface))] border-b border-border shadow-sm sticky top-[56px] z-40">
+    <div style={{ top: 'calc(var(--banner-h, 32px) + 56px)' }} className="bg-white dark:bg-[rgb(var(--surface))] border-b border-border shadow-sm sticky z-40">
       <div className="container">
         <div className="flex items-center">
           {/* Brand pill */}
@@ -26,7 +26,7 @@ export default function PosyanduSubnav() {
           </div>
 
           {/* Tab links */}
-          <div className="flex items-center overflow-x-auto scrollbar-hide flex-1 justify-end">
+          <div className="flex items-center overflow-x-auto scrollbar-hide flex-1 justify-end ml-8">
             {links.map((l) => {
               const active = l.exact
                 ? pathname === l.href
@@ -35,7 +35,7 @@ export default function PosyanduSubnav() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`relative flex items-center gap-1 px-2 py-2.5 text-[9.5px] font-semibold flex-shrink-0 transition-colors duration-200 whitespace-nowrap ${
+                  className={`relative flex items-center gap-0.5 px-[4px] py-2.5 text-[9px] font-semibold flex-shrink-0 transition-colors duration-200 whitespace-nowrap ${
                     active
                       ? 'text-primary dark:text-primary-light'
                       : 'text-muted hover:text-ink dark:hover:text-ink'
