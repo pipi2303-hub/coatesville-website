@@ -194,8 +194,18 @@ export default function Navbar() {
 
             {/* CTA + Search + Theme + Hamburger */}
             <div className="flex items-center gap-2">
-              {/* Login */}
-              <div className="hidden lg:flex items-center ml-1">
+              {/* Kontak Kami + Masuk */}
+              <div className="hidden lg:flex items-center gap-2 ml-1">
+                <Link
+                  href="/kontak"
+                  className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
+                    scrolled
+                      ? 'border border-primary text-primary hover:bg-primary hover:text-white'
+                      : 'border border-white/70 text-white hover:bg-white hover:text-primary'
+                  }`}
+                >
+                  Kontak Kami
+                </Link>
                 <Link
                   href="/auth/login"
                   className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
@@ -207,13 +217,6 @@ export default function Navbar() {
                   Masuk
                 </Link>
               </div>
-
-              <Link
-                href="/kontak"
-                className="hidden xl:inline-flex items-center gap-2 px-6 py-2.5 bg-accent text-white rounded-full text-[0.875rem] font-bold transition-all duration-300 hover:bg-primary hover:-translate-y-0.5 hover:shadow-card active:translate-y-0"
-              >
-                Kontak Kami
-              </Link>
 
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -329,13 +332,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="px-8 pb-10 pt-6 border-t border-white/10 space-y-4">
-          <Link href="/auth/login" className="block text-center bg-white text-primary text-[0.8rem] font-bold py-3 rounded-2xl shadow-lg active:scale-95 transition-all">
-            Masuk
-          </Link>
-          <Link href="/kontak" className="btn-primary w-full text-center justify-center py-3.5 rounded-2xl">
-            Kontak Kami
-          </Link>
+        <div className="px-8 pb-10 pt-6 border-t border-white/10 space-y-3">
+          <div className="flex gap-3">
+            <Link href="/kontak" className="flex-1 text-center border border-white/40 text-white text-[0.8rem] font-bold py-3 rounded-2xl hover:bg-white/10 transition-colors active:scale-95">
+              Kontak Kami
+            </Link>
+            <Link href="/auth/login" className="flex-1 text-center bg-white text-primary text-[0.8rem] font-bold py-3 rounded-2xl shadow-lg active:scale-95 transition-all">
+              Masuk
+            </Link>
+          </div>
         </div>
       </nav>
     </>
