@@ -109,3 +109,24 @@
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #F8F5EE; }
 ::-webkit-scrollbar-thumb { background: #40916C; border-radius: 3px; }
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+/* Fade-up for floating elements */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.2s ease forwards; }
+
+/* Admin sidebar transition */
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200;
+}
+.sidebar-link:hover { @apply bg-white/10; }
+.sidebar-link.active { @apply bg-white text-primary; }
