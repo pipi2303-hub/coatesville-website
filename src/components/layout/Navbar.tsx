@@ -200,8 +200,8 @@ export default function Navbar() {
                   href="/kontak"
                   className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
                     scrolled
-                      ? 'border border-primary text-primary hover:bg-primary hover:text-white'
-                      : 'border border-white/70 text-white hover:bg-white hover:text-primary'
+                      ? 'text-primary hover:text-primary-mid'
+                      : 'text-white/80 hover:text-white'
                   }`}
                 >
                   Kontak Kami
@@ -211,7 +211,7 @@ export default function Navbar() {
                   className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
                     scrolled
                       ? 'bg-primary text-white shadow-sm hover:bg-primary-mid'
-                      : 'bg-white text-primary shadow-sm hover:bg-accent hover:text-white'
+                      : 'bg-primary text-white shadow-sm hover:bg-primary-mid'
                   }`}
                 >
                   Masuk
