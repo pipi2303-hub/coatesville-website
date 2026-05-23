@@ -6,10 +6,6 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 import { navItems, type NavItem } from '@/lib/navigation'
 
-interface MegaItem extends NavItem {
-  desc?: string
-  icon?: string
-}
 
 export default function Navbar() {
   const pathname = usePathname()

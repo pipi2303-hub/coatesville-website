@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 }
 
 const videos = [
-  { title: 'Sambutan Ketua RW 44 Coatesville', duration: '5:32', cat: 'Sambutan', thumb: 'vid-thumb-1', desc: 'Video sambutan resmi Ketua RW 44 Coatesville periode 2024–2026 kepada seluruh warga komunitas.' },
-  { title: 'Profil & Sejarah RW 44 Coatesville', duration: '8:15', cat: 'Profil', thumb: 'vid-thumb-2', desc: 'Pengenalan lengkap profil komunitas RW 44 Coatesville — sejarah, wilayah, dan pencapaian.' },
-  { title: 'Program Unggulan Kepengurusan 2024–2026', duration: '12:40', cat: 'Program', thumb: 'vid-thumb-3', desc: 'Pemaparan program-program unggulan kepengurusan RW 44 untuk periode 2024–2026.' },
-  { title: 'Posyandu Sehat Ceria RW 44', duration: '6:20', cat: 'Posyandu', thumb: 'vid-thumb-4', desc: 'Pengenalan Posyandu Sehat Ceria RW 44 — layanan, jadwal, dan cara bergabung.' },
+  { title: 'Sambutan Ketua RW 44 Coatesville', duration: '5:32', cat: 'Sambutan', desc: 'Video sambutan resmi Ketua RW 44 Coatesville periode 2024–2026 kepada seluruh warga komunitas.' },
+  { title: 'Profil & Sejarah RW 44 Coatesville', duration: '8:15', cat: 'Profil', desc: 'Pengenalan lengkap profil komunitas RW 44 Coatesville — sejarah, wilayah, dan pencapaian.' },
+  { title: 'Program Unggulan Kepengurusan 2024–2026', duration: '12:40', cat: 'Program', desc: 'Pemaparan program-program unggulan kepengurusan RW 44 untuk periode 2024–2026.' },
+  { title: 'Posyandu Sehat Ceria RW 44', duration: '6:20', cat: 'Posyandu', desc: 'Pengenalan Posyandu Sehat Ceria RW 44 — layanan, jadwal, dan cara bergabung.' },
 ]
 
 export default function VideoPage() {

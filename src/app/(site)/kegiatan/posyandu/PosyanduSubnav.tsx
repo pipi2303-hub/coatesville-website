@@ -26,7 +26,7 @@ export default function PosyanduSubnav() {
           </div>
 
           {/* Tab links */}
-          <div className="flex items-center overflow-x-auto scrollbar-hide flex-1">
+          <div className="flex items-center overflow-x-auto scrollbar-hide flex-1 justify-end">
             {links.map((l) => {
               const active = l.exact
                 ? pathname === l.href
