@@ -78,7 +78,7 @@ export default function Navbar() {
         <div className="container">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
+            <Link href="/" className="flex flex-col items-center gap-1 group">
               <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 ring-2 ring-accent/30 group-hover:ring-accent transition-all duration-300 group-hover:scale-105">
                 <Image
                   src="/images/logo-posyandu.jpeg"
@@ -88,22 +88,13 @@ export default function Navbar() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="flex flex-col leading-none">
-                <span
-                  className={`font-serif font-bold text-[1.2rem] transition-colors duration-300 ${
-                    scrolled ? 'text-primary dark:text-primary-light' : 'text-white'
-                  }`}
-                >
-                  Portal RW 44
-                </span>
-                <span
-                  className={`text-[0.6rem] tracking-[2.5px] uppercase font-bold transition-colors duration-300 ${
-                    scrolled ? 'text-muted' : 'text-white/60'
-                  }`}
-                >
-                  Coatesville
-                </span>
-              </div>
+              <span
+                className={`text-[0.55rem] tracking-[2.5px] uppercase font-bold transition-colors duration-300 ${
+                  scrolled ? 'text-muted' : 'text-white/60'
+                }`}
+              >
+                Coatesville
+              </span>
             </Link>
 
             {/* Desktop Nav */}
