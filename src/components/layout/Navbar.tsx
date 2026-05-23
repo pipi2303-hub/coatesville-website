@@ -5,8 +5,6 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 import { navItems, type NavItem } from '@/lib/navigation'
-import ThemeToggle from '@/components/ui/ThemeToggle'
-import SearchModal from '@/components/ui/SearchModal'
 
 interface MegaItem extends NavItem {
   desc?: string
@@ -19,7 +17,6 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
-  const [searchOpen, setSearchOpen] = useState(false)
   const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -38,17 +35,6 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
-  // Global keyboard shortcut: Cmd+K / Ctrl+K
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault()
-        setSearchOpen((o) => !o)
-      }
-    }
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
-  }, [])
 
   const handleMouseEnter = (label: string) => {
     if (dropdownTimer.current) clearTimeout(dropdownTimer.current)
@@ -66,8 +52,6 @@ export default function Navbar() {
 
   return (
     <>
-      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
-
       <nav
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
           scrolled
@@ -210,26 +194,6 @@ export default function Navbar() {
 
             {/* CTA + Search + Theme + Hamburger */}
             <div className="flex items-center gap-2">
-              {/* Search Button */}
-              <button
-                onClick={() => setSearchOpen(true)}
-                className={`hidden lg:flex items-center gap-2 px-3 py-2 rounded-xl text-sm transition-all duration-300 border ${
-                  scrolled
-                    ? 'bg-bg border-border text-muted hover:text-ink hover:border-primary/30'
-                    : 'bg-white/10 border-white/20 text-white/70 hover:bg-white/20 hover:text-white'
-                }`}
-                title="Cari (⌘K)"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
-                </svg>
-                <span className="text-xs hidden xl:block">Cari...</span>
-                <kbd className="hidden xl:flex items-center text-[0.6rem] border border-current/30 rounded px-1 py-0.5 font-mono opacity-60">⌘K</kbd>
-              </button>
-
-              {/* Theme Toggle */}
-              <ThemeToggle scrolled={scrolled} />
-
               {/* Portal + Login */}
               <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20 ml-1">
                 <Link
@@ -303,26 +267,15 @@ export default function Navbar() {
             <span className="font-serif font-bold text-white text-xl">Menu Utama</span>
             <span className="text-[0.6rem] text-white/50 tracking-[2px] uppercase mt-1">Portal RW 44</span>
           </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
-              aria-label="Cari"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
-              </svg>
-            </button>
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
-              aria-label="Tutup Menu"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+            aria-label="Tutup Menu"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
         <ul className="flex-1 overflow-y-auto px-8 py-6 space-y-1">
