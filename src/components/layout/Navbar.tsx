@@ -192,17 +192,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {/* Kontak Kami + Masuk */}
               <div className="hidden lg:flex items-center gap-2 ml-1">
-                <Link
-                  href="/kontak"
-                  className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
-                    scrolled
-                      ? 'text-primary hover:text-primary-mid'
-                      : 'text-white/80 hover:text-white'
-                  }`}
-                >
-                  Kontak Kami
-                </Link>
-                <Link
+<Link
                   href="/auth/login"
                   className={`px-4 py-1.5 rounded-full text-[0.78rem] font-bold transition-all duration-300 ${
                     scrolled
@@ -330,9 +320,6 @@ export default function Navbar() {
 
         <div className="px-8 pb-10 pt-6 border-t border-white/10 space-y-3">
           <div className="flex gap-3">
-            <Link href="/kontak" className="flex-1 text-center border border-white/40 text-white text-[0.8rem] font-bold py-3 rounded-2xl hover:bg-white/10 transition-colors active:scale-95">
-              Kontak Kami
-            </Link>
             <Link href="/auth/login" className="flex-1 text-center bg-white text-primary text-[0.8rem] font-bold py-3 rounded-2xl shadow-lg active:scale-95 transition-all">
               Masuk
             </Link>

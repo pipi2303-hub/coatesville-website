@@ -72,5 +72,4 @@ export const navItems: NavItem[] = [
       { label: 'Laporan Keuangan', href: '/laporan/keuangan' },
     ],
   },
-  { label: 'FAQ', href: '/faq' },
 ]
